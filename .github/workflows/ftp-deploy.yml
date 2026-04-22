@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
-        server: w01c627a.kasserver.com
+        server: ${{ secrets.FTP_SERVER }}
         server-dir: workshop/
-        username: f017c53b
+        username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PWD }}
         exclude: |
           setup-hooks.sh
