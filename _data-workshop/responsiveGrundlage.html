@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grundlage</title>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit-icons.min.js"></script>
+
+    <style>
+        /* Basics */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --c-primary: #a71e5e;
+            --c-secondary: #e30613;
+            --c-tertiary: #979290;
+
+            --c-primary-d: #5a0f32;
+            --c-secondary-d: #96000f;
+            --c-tertiary-d: #46413c;
+
+            --c-tertiary-h: #ebe6e5;
+        }
+
+        body {
+            font-family: Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            font-size: 1.5rem;
+        }
+
+        #wrapper {
+
+            main,
+            nav,
+            header,
+            footer,
+            .sub {
+                padding: 1em;
+                margin: .2em;
+                text-align: center;
+                min-height: 4em;
+            }
+
+            a{
+                color:white;
+                text-decoration: underline;
+            }
+        }
+
+        /* Farben */
+
+        aside {
+            background-color: var(--c-tertiary-h);
+            padding: 0;
+        }
+
+        header,
+        footer {
+            background-color: var(--c-secondary-d);
+            color: var(--c-secondary);
+        }
+
+        main {
+            background-color: var(--c-primary-d);
+            color: var(--c-primary);
+        }
+
+        nav,
+        .sub {
+            background-color: var(--c-primary);
+            color: var(--c-primary-d);
+        }
+
+        
+
+        nav{
+            ul, li{
+                list-style: none;
+                padding: 0;
+            }
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 1.5em;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h3>header</h3>
+        </header>
+        <nav>
+            <h3>nav</h3>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h3>main</h3>
+
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+            sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </main>
+        <aside>
+            <div class="sub">
+                <h3>.sub</h3>
+            </div>
+            <div class="sub">
+                <h3>.sub</h3>
+            </div>
+            <div class="sub">
+                <h3>.sub</h3>
+            </div>
+            <div class="sub">
+                <h3>.sub</h3>
+            </div>
+        </aside>
+        <footer>
+            <h3>footer</h3>
+        </footer>
+    </div>
+</body>
+
+</html>

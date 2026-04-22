@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 2 - Produktion Interaktiver Medien</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="./_assets/workshop.css">
+    <style>
+        body {
+            background-image: url('_assets/images/tile_steam_punk_computer.webp');
+            background-size: 40em 40em;
+            background-attachment: fixed;
+        }
+
+    </style>
+    <script src="_assets/script.js"></script>
+    <script>addNavi();</script>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Produktion Interaktiver Medien<span>Workshop 2: Responsive</span></h1>
+            <p class="uk-text-center">Abgabe: <strong>Dienstag, 18. November 2025, 23:59 Uhr</strong> per <a
+                    href="https://github.com/hsrm-medialab/hsrm-tup-2025ws-workshops" target="_blank">GitHub</a>.
+            </p>
+
+            <p class="uk-text-center">Ziel dieses Workshops ist es, Sie mit der Arbeit im Team und mit UIkit vertraut zu machen. Außerdem erarbeiten
+                wir eine gemeinsame Website mit Ihren Workshop-Ergebnissen. Ich habe Sie deshalb in Gruppen eingeteilt, die nicht den Projektgruppen 
+                entsprechen. Dies ermöglicht es Ihnen zu erlernen, wie die einzelnen Schritte beim Arbeiten im Team mit git, VSCode und GitHub sind.
+            </p>
+        </header>
+
+        <section>
+            <h2>Visual Studio und git einrichten</h2>
+            <ul>
+                <li> <a
+                href="visualstudio_git.html" target="_blank">Richten Sie Ihre Arbeitsumgebung ein.</a></li>
+                <li>Manchmal dauert die Installation etwas länger. Nutzen Sie die Zeit, um sich <a
+                    href="https://github.com/hsrm-medialab/git-github-fundamentals-lagerkoller" target="_blank">die
+                    Git-Einführung</a> durchzuschauen / durchzuarbeiten.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Repository einrichten</h2>
+            <p>Die Workshop-Webseite soll sich zukünftig aus Kacheln mit jeweils einem Portrait von Ihnen und darunter den Links auf Ihre Workshop-Ergebnisse aufbauen, ungefähr so: 
+                <img src="_assets/images/beispiel-kacheln.jpg" alt="Beispiel-Kacheln" style="max-width: 100%;"></p>
+                Deshalb werden wir in diesem Workshop die Grundlagen für diese Seite legen. Dazu müssen Sie folgende Schritte durchführen. 
+            </p>
+            <ul>
+                <li>Jede:r von Ihnen wurde von mir in eine Gruppe eingeteilt, die jeweils aus vier bis fünf Personen besteht. Zu jeder Gruppe gibt es ein Repository in GitHub, zu dem ich 
+                    Sie eingeladen habe. Nehmen Sie die Einladung an, falls das noch nicht geschehen ist.</li>
+                <li>Klonen Sie das Repository, zu dem ich Sie eingeladen habe, mit VSCode in ein Verzeichnis, in dem sie es gut wiederfinden (also nicht irgendwo in Downloads). Diesen Schritt müssen Sie nur einmal machen! Wie Sie mit VSCode mit git klonen und generell arbeiten, finden Sie <a
+                    href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git" target="_blank">hier</a>.</li>
+                <li>Dieses Arbeitsverzeichnis öffnen Sie bitte in VSCode und machen sich mit der Struktur vertraut.</li>    
+                <li>Wechseln Sie in der git-Bash (Windows) oder im Terminal (macOS) in das Repository-Verzeichnis. Das tun Sie, indem Sie <code>cd</code> gefolgt von einem Leerzeichen eingeben, den Repository-Ordner im Explorer (Windows) bzw. Finder (macOS)
+                auf git-Bash bzw. das Terminal ziehen und Enter drücken.</code> Ich habe Ihnen ein Skript in das Repository gelegt, das git so konfiguriert, dass Sie (hoffentlich) bei der Benamung von Dateien weniger Fehler machen. Führen Sie dieses Skript in der git-Bash oder im Terminal aus:
+                    <code>bash setup-hooks.sh</code>
+                    Als Ergebnis sollten Sie erhalten "Git hooks have been set up successfully". Falls nicht, fragen Sie bitte mich gerne.</li>
+                </li>
+            </ul>
+            <p><img src="_assets/images/beispiel-terminal.png" alt="Beispiel-Terminal" style="max-width: 100%;"></p>
+        </section>
+
+        <section>
+            <aside class="git-alert">
+                <h4>Weniger Stress mit git:</h4>
+                <ul>
+                    <li>Von Anfang an <b>alle</b> <strong>Ordner-, Dateinamen und Endungen</strong> ausschließlich
+                        </strong>klein und ohne Sonderzeichen schreiben. Verwenden Sie niemals Leerzeichen am Anfang
+                        oder Ende von Ordner- oder Dateinamen!</li>
+                    <li>Mit <strong>pull</strong> holen Sie die Änderungen vom Server in Ihr Arbeitsverzeichnis.</li>
+                    <li>Wenn ein oder mehrere <strong>merge</strong>-Konflikte auftauchen, müssen diese alle gelöst und
+                        das Ergebnis commited werden, bevor Sie irgendwas anderes machen!</li>
+                    <li>Geben Sie vor dem <strong>Commit</strong> immer eine eine kurze Beschreibung ein und überprüfen Sie, ob das wirklich auch alles Änderungen sind, die sie weitergeben wollen oder ob Sie etwas zurückalten oder <strong>revert</strong>en wollen.</li>
+                    <li>Führen Sie danach ein <strong>push</strong> 8bzw. Synchronisieren aus.</li>
+                    <li>Folgende Dinge bitte erst mal nicht verwenden: Branches, Rebase, Terminal-Befehle (außer zum
+                        git-Installieren und Nutzernamen-Setzen)</li>
+                </ul>
+                <p>Hier finden Sie einen <a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git"
+                        target="_blank">einen kurzen Einstieg zu Git in VSCode</a> und hier eine <a
+                        href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank">ausführlichere
+                        Hilfeseite mit Videos.</a></p>
+            </aside>
+        </section>
+
+
+        
+        <section>
+            <h2>Git: Committen und Pushen</h2>
+            <ul>
+                <li>Kopieren Sie den beim letzten mal erstellten Ordner <code>vorname-nachname/</code> in das
+                    Arbeitsverzeichnis. Ab jetzt arbeiten Sie fast nur noch in diesem Ihrem Verzeichnis!</li>
+                <li>Benennen Sie die <code>index.html</code> in <code>workshop1.html</code> um.</li>
+                <li>Überprüfen Sie, ob alle Dateinamen in diesem Verzeichnis klein und ohne Umlaute geschrieben sind und
+                    das Verzeichnis keine zu großen Bilder enthält.</li>
+                <li>Sicherheitshalber noch mal einen Git-Pull durchführen.</li>
+                <li>Committen Sie Ihre Änderungen und geben dabei eine Zusammenfassungszeile an.</li>
+                <li>Pushen Sie Ihre Änderungen.</li>
+                <li>Schauen Sie sich das Repository auf GitHub an.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>UIkit: Layout anlegen</h2>
+            <ul>
+                <li>Kopieren Sie die Daten aus <a href="https://im25ws.rheinmain-interaktiv.de/workshop/_data-workshop/_base/base.zip"><code>data-workshop/base</code></a> in Ihr <code>vorname-nachname/</code>
+                    Verzeichnis (Achtung: Überschreiben Sie ihr vorhandenes JS und CSS nicht sondern verwenden sie diese
+                    Dateien ggf weiter).</li>
+                <li>Benennen Sie die <s><code>base.html</code></s> in <code>workshop2.html</code> um.</li>
+                <li>Füllen Sie nun die <code>main</code>-Spalte mit gegliedertem Text. Diesen Text müssen Sie nicht
+                    selbst schreiben. Dafür können Sie z.B. Blindtext verwenden oder einen Wikipedia-Artikel
+                    kopieren.</li>
+                <li>Gliedern Sie die Hauptabschnitte in <code>&lt;section&gt;</code>-Abschnitte. Jede davon sollte eine
+                    Überschrift (<code>&lt;h2&gt;</code>) haben.</li>
+
+                <li>Bauen Sie nun rund um diesen Beispieltext ein Layout mit <a href="https://getuikit.com/docs/grid"
+                        target="_blank">UIkit-Grids</a> auf. Wenden Sie dabei das in der Vorlesung Erlernte an.
+                    <ul>
+                        <li>Verwenden Sie die <code>.uk-container</code>-Klasse zum Begrenzen der Hauptspalten.</li>
+                        <li>Verwenden Sie <code>.uk-grid</code> um die Texte in Spalten zu gliedern.</li>
+                        <li>Nutzen sie <code>.uk-card</code> Listen, um kurze Informationsteile hervorzuheben.</li>
+                        <li>Sie können einem Element mehrere Klassen zuweisen (z.B.
+                            <code>class="uk-width-1-2 uk-card")</code></li>
+                    </ul>
+                </li>
+                <li>Passen Sie die Grid-Klassen mit <code>@s @m @l</code> usw. so an, dass z.B. Spalten erst ab den
+                    gewünschten Breakpoints nebeneinanderstehen. Arbeiten Sie dabei "mobile first".</li>
+                <li>Passen Sie die Schriften, Farben und Hintergründe der Seite nach Ihrem Geschmack an.</li>
+
+            </ul>
+        </section>
+
+        <section>
+            <h2>Testen, verlinken und veröffentlichen</h2>
+
+            <ul>
+                <li>Testen Sie die in diesem Workshop erzeugten Dateien mit dem W3C-Validator. Sind alle Datei- und
+                    Verzeichnisnamen klein und ohne Sonderzeichen geschrieben?</li>
+                <li>Ergänzen Sie in der index.html Ihres Repositories Ihr Portrait und die Verlinkungen
+                    <ul>
+                        <li>Duplizieren Sie dazu die <code>article</code> Vorlage in der <code>index.html</code></li>
+                        <li>Referenzieren Sie Ihr Portrait-Photo (das kleiner gerechnet in ihrem Namens-Verzeichnis
+                            liegen sollte) in <code>&lt;img src=".."&gt;</code></li>
+                        <li>Ergänzen Sie Ihren Namen</li>
+                        <li>Verlinken Sie Ihre Workshop-Ergebnisse (Link auf ihren Unterordner)</li>
+                    </ul>
+                    Diesen Schritt sollten Sie in einem eigenen Commit durchführen um Bearbeitungskonflikte zu
+                    vermeiden.
+                </li>
+                <li>Pushen Sie Ihren Stand auf den Server.</li>
+                <li>Testen Sie Ihre Seiten hier auf dem Server. Auch mit dem Smartphone.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 1 - Technologie und Produktion (IM/UI)</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="./_assets/workshop.css">
+    <style>
+        body {
+            background-image: url('_assets/images/tile_daisy_pastels.webp');
+            background-size: 40em 40em;
+            background-attachment: fixed;
+        }
+    </style>
+
+    <script src="_assets/script.js"></script>
+    <script>addNavi();</script>
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <h1>Technologie und Produktion (IM/UI)<span>Workshop 1: HTML/CSS</span></h1>
+            <p class="uk-text-center">Herzlich willkommen zum ersten Workshop. In diesem Workshop geht es darum, 
+                Grundlagen von HTML (& CSS) zu wiederholen.</p>
+            <!-- Kommentar -->
+            <p class="uk-text-center">Vorlesungsfolien: <a href="https://docs.google.com/presentation/d/1DaXEq5PK7lp5YT3ObSE7XIOTO4RfHdaj3JO_YSJ6OnI/edit?usp=sharing" target="_blank">HTML / CSS</a>
+                <br>Abgabe: <strong>Dienstag, 04. November 2025</strong>. Gesamter Ordner als Zip-Datei
+                <code>vorname-nachname.zip</code> auf Stud.IP unter
+                <code>Dateien/Abgaben/ Abgaben – Workshops Technologie und Produktion/Workshop 1</code>
+            </p>
+            
+        </header>
+
+        <section>
+            <h2>Visual Studio Code installieren</h2>
+            <p>Falls noch nicht gesehen, Installieren Sie </p>
+            <ul>
+                <li><a href="https://code.visualstudio.com/">Visual Studio Code</a>.</li>
+                <li>die Extension <a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">Git Graph</a>.</li>
+                <li>die Extension <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a>.</li>
+                <li>die Extension <a href="https://marketplace.visualstudio.com/items?itemName=CelianRiboulet.webvalidator">W3C Web Validator</a>.</li>
+            </ul>
+
+            
+        </section>
+
+        <section>
+            <h2>Ordnerstruktur</h2>
+            <ul>
+                <li>Legen Sie den Ordner <code>tup-workshop</code> an.</li>
+                <li>Legen Sie darin einen Ordner mit dem <strong>eigenen</strong> Namen an mit dem Format <code>vorname-nachname</code> an. Für mich wäre der Name des Ordners beispielsweise <code>johannes-luderschmidt</code>. (Achtung:
+                    Keine Umlaute und Sonderzeichen!)</li>
+                <li>Erstellen Sie darin den Ordner <code>assets</code>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Html-Basis erstellen</h2>
+            <p>Erstellen Sie eine HTML-Datei <code>index.html</code> in Ihrem <code>vorname-nachname</code> Ordner und füllen Sie diese mit folgenden Inhalten:</p>
+            <ul>
+                <li>HTML Basis-Code</li>
+                <li>Eine Hauptüberschrift (z.B. "Mein Basis-Code)"</li>
+                <li>Blindtextelemente (z.B. in <code>&lt;p&gt;</code> oder <code>&lt;section&gt;</code> Elementen)</li>
+                <li><code>&lt;style&gt;</code>-Block im <code>head</code></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Webfont einbinden</h2>
+            <ul>
+                <li>Suchen Sie einen oder mehrere Fonts bei <a href="https://fonts.google.com/" target="blank">Google-Fonts</a> aus.
+                    </li>
+                <li>Binden Sie den Webfont in Ihre HTML-Seite bzw. Ihren CSS-Code ein. Google Fonts bietet das passende Code-Snippet dafür an.</li>
+                <li>Passen Sie die Text-Formatierungen für Ihre Überschrift und Blindtext-Elemente grundlegend an. Sie können den Font in Ihrem CSS-Code per <code>font-family: "Name des ausgewählten Fonts", fall-back-font;</code> den gewünschen Elementen zuweisen. Auch diesen Code können Sie sich bei Google Fonts kopieren.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>UIkit einbinden</h2>
+            <ul>
+                <li>Binden Sie <a href="https://getuikit.com/docs/introduction" target="_blank">UIkit</a> ein.</li>
+                <li>Erstellen Sie eine neue Section mit <a href="https://getuikit.com/docs/card" target="_blank">Card-Elementen</a>
+                    und befüllen Sie diese mit Beispiel-Inhalten.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Bilder einfügen</h2>
+            <ul>
+                <li>Legen Sie in <code>assets</code> einen Ordner <code>images</code> an.</li>
+                <li>Exportieren Sie Bilder (eigene, KI-generierte oder freie aus dem Netz) mit Photoshop o.ä. in den Formaten
+                    <code>.<a href="https://de.wikipedia.org/wiki/JPEG" target="_blank">jpg</a></code>,
+                    <code>.<a href="https://de.wikipedia.org/wiki/Portable_Network_Graphics" target="_blank">png</a></code>
+                    oder
+                    <code>.<a href="https://de.wikipedia.org/wiki/webP" target="_blank">webp</a></code> in den images-Ordner.<br>
+                    Hinweis: Maximal 2000 px Breite, 500 kB Größe
+                </li>
+                <li>Binden Sie Bilder in Ihre Seite in UIkit-Cards ein. Nutzen Sie darüber hinaus ein Bild, das Sie der Webseite als Hintergrundbild einfügen. Hierfür können Sie sich auch Bilder generieren lassen, die sich entsprechend kacheln lassen.</li>
+                
+            </ul>
+        </section>
+
+        <section>
+            <h2>Beispieltabelle einfügen und formatieren</h2>
+            <ul>
+                <li>Befüllen Sie eine Tabelle mit  Steckbriefdaten (z.B. Name, Geburtstag, Hobbys, ...).</li>
+                <li>Stylen Sie die Tabelle mit <a href="https://getuikit.com/docs/table" target="_blank">UIkit-Klassen</a>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Auf Validität testen</h2>
+            <ul>
+                <li>Sorgen Sie dafür, dass Ihre eigenen abgegeben Dateien valide sind. Das betrifft Ihre HTML- und ggf. auch CSS-Dateien.</li>
+                <li>Ihre Dateien können Sie mit dem <a href="https://validator.w3.org/">W3C Web Validator</a> testen.</a>.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>GitHub-Account erstellen</h2>
+            <ul>
+                <li>Folgen Sie der Anleitung auf der Unterseite <a href="visualstudio_git.html">Visual Studio und git</a></li>
+            </ul>
+        </section>
+    </main>
+
+     
+
+</body>
+
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 3 - Produktion Interaktiver Medien</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="./_assets/workshop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+    <style>
+        body {
+            background-image: url('_assets/images/tile_line_topographic.webp');
+            background-size: 40em 40em;
+            background-attachment: fixed;
+        }
+    </style>
+    <script src="_assets/script.js"></script>
+    <script>addNavi();</script>
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <h1>Produktion Interaktiver Medien<span>Workshop 3: JavaScript</span></h1>
+            <p class="uk-text-center">
+                <br>Abgabe: <strong>Dienstag, 2. Dezember 2025</strong> per <a
+                    href="https://github.com/hsrm-medialab/hsrm-pim-2025ws-workshops" target="_blank">GitHub</a>.
+            </p>
+        </header>
+        <section>
+            <h2>Daten synchronisieren</h2>
+            <ul>
+                <li>Führen sie git-Pull aus, um einen aktuellen Stand der Workshop-Daten zu erhalten.
+                </li>
+                <li>Kopieren Sie die Daten aus <a href="_data-workshop/js-workshop.zip"
+                        target="_blank"><code>_data-workshop/js-workshop</code></a> in ein neues
+                    <code>vorname-nachname/js-workshop</code>
+                    Verzeichnis. Die darin enthalten Dateien können Sie beliebig häufig kopieren und umbenennen.
+                </li>
+
+                <li>Melden Sie sich, falls es dabei Probleme geben sollte.</li>
+            </ul>
+        </section>
+
+        <section>
+            <p>Im dritten Workshop-Termin geht es darum, Ihre JavaScript-Kenntnisse
+                mithilfe von jQuery zu nutzen, um Veränderungen in der Seite durchzuführen und auf
+                Events zu
+                reagieren. Die zugehörigen Referenzen finden Sie unter: <a
+                    href="https://api.jquery.com/">api.jquery.com</a> und <a
+                    href="https://developer.mozilla.org/de/docs/Web/JavaScript">developer.mozilla.org</a>
+            </p>
+            <h2><span>Aufgabe 1: </span>Mit JavaScript experimentieren</h2>
+            <p>Im Beispielverzeichnis finden Sie die Datei <code>jQueryTest.html</code>. Erstellen Sie von dieser eine Kopie und nennen Sie diese <code>js-experimente.html</code>. Probieren
+                    Sie darin jedes der unten aufgelisteten Code-Beispiele aus. Sorgen Sie dafür, dass der
+                    gesamte jQuery-Code innerhalb von <code class="c3">$(function () { });</code> in <code>js-experimente.html</code> ausgeführt wird. Um die Ausgaben der Funktion <code class="c3">console.log()</code> zu
+                    lesen, öffnen Sie die Browser-Konsole:</p>
+            <ul>
+                <li><span>Firefox: </span><span class="c28"><a class="c25"
+                            href="https://firefox-source-docs.mozilla.org/devtools-user/">DevTools User Docs</a></span>
+                </li>
+                <li><span>Chrome: </span><span class="c28"><a class="c25"
+                            href="https://developer.chrome.com/docs/devtools/overview">Webentwicklertools</a></span>
+                </li>
+            </ul>
+            <p>Hinweis: Tauschen Sie in den unten stehenden Beispielen<code>[css
+                    selektor]</code> so aus, dass Elemente auf der Seite verwendet
+                    werden. Ergänzen Sie an den Elementen ggf. <code>class</code> oder <code>id</code>-Attribute.</p>
+
+
+            <h3>Ereignisse verarbeiten</h3>
+            <p><span>Mit folgendem Code können Sie eine Funktion für einen Klick auf Element(e)
+                    registrieren.</span></p>
+            <pre><code class="language-javascript">$('[css selektor]').click( function (e) {
+    console.log('Folgendes Ereignis ist aufgetreten: ', e);
+});
+</code></pre>
+
+            <p><span class="c8 c27 c32"></span></p>
+            <p><span>Die Variable </span><code class="c3">e</code><span class="c2">&nbsp;in der
+                    Ereignisverarbeitungsfunktion enthält das ausgelöste Ereignis. Schauen Sie sich
+                    in der Konsole
+                    an welche Eigenschaften und Methoden dieses hat.</span></p>
+            <p><span>Die für uns wichtigste Methode heißt </span><span class="c3">preventDefault</span><span
+                    class="c2">. Wenn man sie aufruft, verhindert man, dass
+                    die dem Event zugeordnete &nbsp;Standard-Aktion (z.B. ein Seitenwechsel bei
+                    einem Link)
+                    ausgeführt wird.</span></p>
+
+
+            <h3>Klassen setzen</h3>
+            <p><span>Am effektivsten lässt sich das Aussehen von Elementen mit JavaScript steuern, wenn
+                    man nur Klassen hinzufügt oder entfernt und das Aussehen und die Animationen
+                    allein in CSS
+                    definiert:</span></p>
+            <pre><code class="language-javascript">// Klassen hinzufügen
+$('[css selektor]').addClass('meine-klasse'); 
+
+// Klassen entfernen
+$('[css selektor]').removeClass('meine-klasse'); 
+</code></pre>
+            <p><span>Mit Hilfe der toggle-Funktion kann man einfach einen Klassennamen abwechselnd
+                    hinzufügen oder entfernen ohne vorher überprüfen zu müssen, um welchen Zustand
+                    es gerade
+                    geht.</span></p>
+            <pre><code class="language-javascript">// Klassen wechseln
+$('[css selektor]').toggleClass('meine-klasse');
+</code></pre>
+
+
+            <h3>Ein- und Ausblenden</h3>
+            <p><span class="c2">Sie können Elemente direkt mit jQuery ein und ausblenden und sogar
+                    löschen.</span></p>
+            <pre><code class="language-javascript">$('[css selektor]').hide(); // Setzt Element auf diplay:none;
+$('[css selektor]').show(); // Entfernt display:none;
+$('[css selektor]').toggle(); // Wechselt zwischem beidem
+$('[css selektor]').remove(); // Löscht das oder die Elemente
+</code></pre>
+
+            <p><span class="c2">Eleganter ist es aber, in CSS eine Klasse zu definieren und diese dann zu
+                    setzen:</span></p>
+            <pre><code class="language-css">.hidden {
+    display:none!important; /* Ja, hier macht !important Sinn */
+}                        
+</code></pre>
+            <pre><code class="language-javascript">$('[css selektor]').addClass('hidden'); // Setzt die Klasse                    
+</code></pre>
+
+            <h3>CSS-Eigenschaften ändern</h3>
+            <p><span>Mit JavaScript kann man auch direkt </span><span class="c2">CSS-Eigenschaften
+                    ändern. Auch z.B. bei allen Artikeln. </span></p>
+            <pre><code class="language-javascript">$('article').css('color', 'red');
+$('article').css('padding', '50px');
+
+// Alternative Schreibweise mit Objektliteral
+$('article').css({
+    'color': 'red',
+    'padding': '50px'
+});
+</code></pre>
+
+            <p><span>Überprüfen Sie mit den Browser-Developer-Tools das jeweilige Element (Rechtsklick:
+                    “Element untersuchen”) und schauen Sie sich an, wo dieses CSS auftaucht.</span>
+            </p>
+
+        </section>
+        
+
+
+<section>
+            <h2><span>Aufgabe 2a:</span> Artikel aus- und einblenden</h2>
+            <p><span>Erstellen Sie eine neue Kopie von </span><code class="c1">jQueryTest.html</code>&nbsp;und benennen diese in <code class="c1">workshop3.html</code>um. Verschieben Sie diese Datei in Ihr <code>vorname-nachname</code>-Verzeichnis. Sorgen Sie dafür, dass die CSS-Datei aus <code>js-workshop/css</code> richtig eingebunden wird. Fügen Sie in <code class="c1">workshop3.html</code> einen
+                    Navigationspunkt “Fließtext ein-/ausblenden” hinzu. Bauen Sie die Code-Beispiele
+                    aus Aufgabe 1
+                    so zusammen, dass beim Klick auf “Fließtext ein-/ausblenden” alle Absätze
+                    (</span><span class="c48">p</span><span class="c2">-Element) aus- und
+                    eingeblendet werden. Folgende Fälle
+                    müssen bei jedem Klick unterschieden werden.</span></p>
+
+            <ol start="1">
+                <li><span class="c2">Wenn die Absätze sichtbar sind, dann werden sie
+                        ausgeblendet.</span></li>
+                <li><span>Wenn die Absätze nicht sichtbar sind, dann werden sie wieder
+                    </span><span>eingeblendet</span>.</li>
+            </ol>
+
+            <p><span class="c44">Hinweis</span><span>: Öffnen Sie Ihre Browser Konsole, wenn Sie Ihre
+                    Seite aufrufen. Dort werden Ihnen Fehler angezeigt, z. B. </span><span
+                    class="c27 c37">ReferenceError</span>.</p>
+
+        </section>
+        <section>
+            <h2><span>Aufgabe 2b:</span>Einfacher Klapper</h2>
+            <p><span class="c2">Vielleicht kennen Sie den Effekt, dass bestimmte Abschnitte einer Seite
+                    zugeklappt sind und sich erst dann öffnen, wenn man auf die Überschrift klickt.
+                    Dieses sog.
+                    “Klapper” bzw. “Accordion”-Funktionalität lässt sich vergleichsweise einfach
+                    selbst mit etwas
+                    CSS und JavaScript realisieren.</span></p>
+
+            <ol start="1">
+                <li><span>Fügen Sie den </span><code class="c1">article</code><span>&nbsp;-Abschnitten
+                        eine Klasse </span><code class="c1">klapper</code><span class="c27">&nbsp;</span>hinzu. <br>
+                </li>
+                <li><span>Ergänzen Sie Ihr JavaScript so, dass es beim Klick auf eine
+                        Überschrift innerhalb dieser Elemente im darüber liegenden </span><span class="c30 c11">.klapper
+                    </span><span>die Klasse &nbsp;</span><span class="c30 c11">open
+                    </span><span>ergänzt/entfernt. Nutzen Sie dabei die jQuery-Funktion um die
+                        übergeordneten
+                        Element zu erreichen:</span></li>
+            </ol>
+            <pre><code class="language-javascript">$('.klapper h2').click(function(){
+    $(this).parents('.klapper').toggleClass('open');
+});</code></pre>
+            <ol start="3">
+                <li><span>Ergänzen Sie ihr CSS so, dass mit Ausnahme der Überschrift die
+                        Inhalte des </span><code>.klapper</code><span class="c30 c11">-</span><span>Artikels
+                        dann ausgeblendet werden, wenn dieser nicht die
+                        Klasse &nbsp;</span><span class="c0 c6">open</span><span class="c11 c30">&nbsp;</span><span>hat.
+                        Verwenden Sie hierzu die Pseudoklasse
+                    </span><code>:not()</code><span>&nbsp;:</span>
+                </li>
+            </ol>
+            <pre><code class="language-css">.klapper:not(.open)>:not(h2){
+    display: none;
+}</code></pre>
+            <ol start="4">
+                <li><span>Fügen Sie mit CSS vor oder hinter der Überschrift Element (Z.B.
+                        ein Symbol) ein, das anzeigt ob der Klapper offen oder geschlossen ist.
+                        Verwenden Sie
+                        hierfür die Pseudoklasse </span><code>::before</code>&nbsp;.<br></li>
+            </ol>
+            <hr style="page-break-before:always;display:none;">
+        </section>
+
+        <section>
+            <h2><span>Aufgabe 3:</span> Animiert zu Bereichen in der Seite
+                scrollen</h2>
+            <p><span class="c2">Sicherlich kennen Sie den Effekt auf One-Page-Seiten, mit dessen Hilfe
+                    Sie durch Klicken auf Elemente in der Navigation zu bestimmten Bereichen der
+                    Seite animiert
+                    scrollen. Diesen Effekt können Sie relativ einfach mit jQuery umsetzen. </span>
+            </p>
+
+            <p><span>Normalerweise werden Sprünge in der Seite mit Anker-Links umgesetzt. D. h. dass an
+                    einem Element eine bestimmtes</span><span class="c6">&nbsp;</span><span
+                    class="c48 c6">id</span><span>-Attribut gesetzt wird und von einem anderen
+                    Link-Element darauf
+                    verwiesen wird:</span></p>
+            <pre><code class="language-html">&lt;article id="springHierher"&gt;…&lt;/article&gt;
+&lt;a href="#springHierher"&gt;Springe Hierher&lt;/a&gt;</code></pre>
+            <p><span class="c2">Beim Klicken des Links springt die Seite aber ruckartig zu dem Ziel in
+                    der Seite. Das wollen wir verbessern.</span></p>
+
+            <ol start="1">
+                <li><span>Fügen Sie einen weiteren </span><code class="c1">article</code><code
+                        class="c3">&nbsp;</code><span>an das Ende von </span><span
+                        class="c0 c6 c11">workshop3.html</span><span>&nbsp;an. Vergeben Sie ein
+                    </span><code class="c1">id</code>-Attribut Ihrer Wahl an diesem Element. </li>
+                <li><span>Betten Sie in diese </span><code class="c1">article</code><span class="c6">&nbsp;</span><span
+                        class="c2">einen Social-Media-Post ein.
+                        Das geht
+                        beispielsweise gut mit X-Posts. Informieren Sie sich online, wie
+                        das
+                        funktioniert.</span></li>
+                <li><span>Fügen Sie einen Link in Ihre Navigation ein, der einen
+                        Anker-Link auf den neuen </span><code class="c1">article</code><span
+                        class="c6">&nbsp;</span><span class="c2">bereitstellt. Testen Sie, ob
+                        der Link funktioniert
+                        (noch ohne animiertes Scrollen).</span></li>
+                <li><span>Erweitern Sie Ihren JavaScript-Code um folgende Elemente.
+                        Registrieren Sie für alle </span><code class="c1">a</code><span>-Elemente, deren
+                    </span><code class="c1">href</code><span>-Attribut eine </span><code
+                        class="c1">#</code>&nbsp;enthält, mit einem Click-Listener. </li>
+                <li><span class="c2">In diesem Listener soll detektiert werden, ob es ein
+                        Element mit dem im Anker definierten Link gibt. </span></li>
+                <li>Wenn das so ist, dann soll mit der jQuery-Funktion animate zur
+                        Position diese Ziels gescrollt werden. Das erreichen Sie mit folgendem
+                        Code (Sie finden Ihn auch unter <code
+                        class="c1">js-workshop/example-code.js</code>).</li>
+            </ol>
+
+            <pre><code class="language-javascript">$('a[href*="#"]').click(function (e) {
+
+    // Sprungziel ermitteln  
+    var href = $(this).attr('href'),
+        $scrollAim = $(href);
+
+    // Abbrechen wenn kein Sprungziel gefunden    	 
+    if ($scrollAim.length == 0) return;
+
+    // Automatisches Scrollen verhindern
+    e.preventDefault();
+
+    // Zum Sprungziel animieren
+    $('html,body').animate({
+                scrollTop: $scrollAim.offset().top
+    }, 700);
+});</code></pre>
+        </section>
+
+        <section>
+            <h2><span>Aufgabe 4:</span> Bildergalerie mit Lightbox-Funktion</h2>
+            <p><span class="c2">Bildergalerien, die bei Klick auf eine Vorschau ein größeres Bild
+                    öffnen, findet man auf fast jeder Website. Wir wollen eine solche nun einmal
+                    mit reinen
+                    Bordmitteln (also reinem CSS/JS) realisieren.</span></p>
+
+            <h3>Die Bildergalerie</h3>
+            <ol start="1">
+                <li><span>Erstellen Sie in einem der Artikel eine Bilder-Galerie, die
+                        mehrere Bilder als Thumbnails anzeigt. Verwenden Sie hierzu eine List
+                    </span><code class="c1">&lt;ul&gt;</code><span>&nbsp;mit einem </span><code
+                        class="c1">&lt;li&gt;</code><span class="c2">&nbsp;für jedes Bild. Um
+                        Bandbreite zu sparen, fügen Sie die Bilder nicht im Originalformat ein, sondern nur als
+                        kleingerechneten Thumbs von wenigen hundert Pixeln Breite. Es ist Ihre Aufgabe, die Thumbnails in einem Bildbearbeitungs-Programm Ihrer Wahl zu erzeugen.</span></li>
+            </ol>
+            <pre><code class="language-html">&lt;ul class="image-gallery">
+	&lt;li&gt;
+        &lt;img src="../_assets/images/blossoms.jpg"&gt;
+        &lt;div&gt;Irgendeine Beschreibung&lt;/div&gt;
+	&lt;/li&gt;
+	...
+&lt;/ul&gt;</code></pre>
+            <ol start="2">
+                <li><span class="c2">Schauen Sie sich in der CSS-Datei an, wie das
+                        Aussehen der Galerie realisiert wurde und passen Sie dieses nach Ihrem
+                        Geschmack an.</span>
+                </li>
+            </ol>
+
+            <ol start="3">
+                <li><span class="c2">Sorgen Sie dafür, dass die Bilder in der mobilen Ansicht untereinander stehen.</span>
+                </li>
+            </ol>
+
+            <ol start="4">
+                <li>Um bei Klick auf eine Thumbnail eine Großansicht zu öffnen,
+                    umgeben Sie nun den Inhalt jedes Links mit einem<code class="c1">&lt;a
+                        href="..."&gt;</code>, und geben dort das Große Bild als Linkziel an. Ergänzen Sie das
+                    Attribut<code class="c1">target</code>, um die Bilder in einem
+                    neuen Tab zu öffnen.</li>
+            </ol>
+
+
+            <h3>Die Lightbox</h3>
+            <p><span class="c2">Nun wollen wir dafür sorgen, dass die großen Bilder nicht einfach in
+                    einem neuen Tab geöffnet werden, sondern in der selben Seiten – in einem
+                    HTML-Element, dass sich
+                    über alle drüber legt.</span></p>
+
+            <ol start="1">
+                <li><span>Hierfür markieren Sie zunächst alle Links, die diese
+                        Funktionalität haben sollen mit der Klasse </span><code class="c1">lightbox-link</code>.</li>
+            </ol>
+
+            <ol start="2">
+                <li><span>Nun erstellen Sie eine JavaScript-Funktion, die bei Klick auf
+                        einen solchen Link neues HTML mit dem großen Bild in die Seite
+                        hinzufügt. Verwenden Sie
+                        hierfür den Event-Handler </span><code class="c3">click</code><span class="c2">. und
+                        verhindern Sie das Ausführen des Links mit der Funktion, die Sie oben
+                        bereits kennengelernt
+                        haben. Der weiter JS-Code gehört dann dahinein.</span></li>
+            </ol>
+            <pre><code class="language-javascript">$('a.lightbox-link').click(function(e){
+    e.preventDefault();
+    // Hier kommt der Code hin
+});
+</code></pre>
+            <ol start="3">
+                <li>Nun erzeugen Sie mit jQuery ein neues HTML-Element mit der korrekten Bild-URL:</li>
+            </ol>
+            <pre><code class="language-javascript">var $html = $('&lt;section class="lightbox"&gt;&lt;button class="btn-close"&gt;Bild Schließen&lt;/button&gt;&lt;figure&gt;&lt;img src="' + this.href + '"&gt;&lt;figcaption&gt;Ihr großes Bild&lt;/figcaption&gt;&lt;/figure&gt;&lt;/section&gt;');
+</code></pre>
+            <ol start="4">
+                <li><span>Dieses HTML-Element fügen Sie nun mit der </span><span class="c3">append</span>-Funktion vor
+                    dem schließenden body-Tag ein.
+                </li>
+            </ol>
+            <pre><code class="language-javascript">$('body').append( $html );</code></pre>
+            <ol start="5">
+                <li><span>Es ist Ihre Aufgabe, dieses HTML per CSS so zu stylen, dass es
+                        groß über allen anderen Inhalten liegt. Verwenden Sie dazu die
+                        CSS-Eigenschaft </span><span class="c19">postition:fixed;</span><span class="c2">&nbsp;und
+                        stylen Sie dann die Elemente,
+                        so dass sie die gesamten Bildschirm ausfüllen und das BIld entsprechend
+                        skaliert
+                        wird.</span></li>
+            </ol>
+
+            <ol start="6">
+                <li><span>Nun sollten Sie noch einen neuen Click-Handler auf die den
+                        Schließen-Button legen, um das große Bild wieder entfernen zu können.
+                        Hierfür suchen sie in
+                    </span><code class="c3">$html</code><span>&nbsp;mit der jQuery-Funktion
+                    </span><span class="c3">find</span><span>&nbsp;den Button. </span><span
+                        class="c3">find()</span><span>&nbsp;erwartet dabei dieselbe Art von
+                        Selektoren wie
+                    </span><code class="c3">$().</code></li>
+            </ol>
+            <pre><code class="language-javascript">$html.find('.btn-close').click(function(e){
+    $html.remove();
+ });</code></pre>
+            <ol start="7">
+                <li><span class="c2">Abschließend können Sie noch ein wenig Kosmetik
+                        machen (optional):</span></li>
+            </ol>
+            <ol start="1">
+                <li class="c4 c49 li-bullet-0"><span>Versehen Sie das CSS zur Lightbox mit einer
+                        Animation, die
+                        diese am Anfang einblendet oder reinfährt. Verwenden Sie hierzu
+                        &nbsp;</span><span class="c19">@keyframe</span><span>&nbsp;und
+                    </span><code>animation</code><span>.
+                        Mehr dazu finden Sie unter </span><span class="c28"><a class="c25"
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations">Using CSS animations - CSS: Cascading Style Sheets | MDN</a></span>
+                </li>
+                <li class="c4 c49 li-bullet-0">Stylen Sie den<code class="c3">.btn-close</code> so mit CSS,
+                    dass Sie den Text ausblenden
+                    (z.B. via <code>font-size:0;</code>) &nbsp;und mit dem Pseudoelement <code
+                            class="c19">::before</code> und <code>::after</code> ein
+                        Schließen-Kreuz bauen.</li>
+            </ol>
+            <pre><code class="language-css">.btn-close {
+    position: relative;
+    font-size: 0;
+}
+        
+.btn-close::before {
+    content: '';
+    display: block;
+    background-color: currentColor;
+    width: 1rem;
+    height: 0.1rem;
+    transform: rotate(45deg);
+    /* usw. */
+}
+
+.btn-close::after {
+    /* usw. */</code></pre>
+        </section>
+
+        <section>
+            <h2>Infos zur Abgabe</h2>
+            <p>Bitte prüfen Sie folgende Punkte:</p>
+
+            <ul>
+                <li>Was sagt die Webdeveloper-Konsole im Browser? Gibt es
+                        dort Fehler? Warnungen?<br>Falls ja: Bitte korrigieren.</li>
+                <li>Haben Sie alle öffnenden Tags auch wieder
+                        geschlossen?</li>
+                <li>Zeigt Ihnen Ihr Editor Text rot an? Das sind Fehler,
+                        die Sie korrigieren müssen.</li>
+                <li>Sieht alles im Browser (Chrome oder Firefox) so aus,
+                        wie es aussehen soll?</li>
+                <li>Wirft der W3C-Validator-Fehler? Den
+                        Validator finden Sie unter <a href="https://validator.w3.org/nu/">https://validator.w3.org/</a> oder als <a href="https://marketplace.visualstudio.com/items?itemName=CelianRiboulet.webvalidator" target="_blank">Plugin in VSCode</a>.
+                </li>
+                <li>Fügen Sie den Link zu "Workshop 3" in Ihrer Karte in der <code>index.html</code> hinzu.</li>
+                <li>Abschließend commiten Sie ihre Ergebnisse und pushen Sie diese nach github.</li>
+            </ul>
+
+        </section>
+
+    </main>
+</body>
+
+</html>

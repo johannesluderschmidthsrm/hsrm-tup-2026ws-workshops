@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 4 - Web3D</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="./_assets/workshop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+    <style>
+        body {
+            background-image: url('_assets/images/tile_line_topographic.webp');
+            background-size: 40em 40em;
+            background-attachment: fixed;
+        }
+    </style>
+    <script src="_assets/script.js"></script>
+    <script>addNavi();</script>
+</head>
+
+<body>
+
+    <main>
+
+        <!-- HEADER -->
+        <header>
+            <h1>Produktion Interaktiver Medien
+                <span>Workshop 4: Web 3D Integration</span>
+            </h1>
+            <p class="uk-text-center">
+                <br>Abgabe: <strong>Freitag, 12. Dezember 2025</strong> per
+                <a href="https://github.com/hsrm-medialab/hsrm-pim-2025ws-workshops" target="_blank">GitHub</a>.
+            </p>
+        </header>
+
+        <!-- DATEN SYNC -->
+        <section>
+            <h2>Daten synchronisieren</h2>
+            <ul>
+                <li>Führen Sie <code>git pull</code> aus, um den aktuellen Stand der Workshop-Daten zu erhalten.</li>
+                <li>Kopieren Sie die Daten aus
+                    <a href="_data-workshop/web-3d-workshop.zip" target="_blank">
+                        <code>_data-workshop/web-3d-workshop</code>
+                    </a>
+                    in ein neues Verzeichnis
+                    <code>vorname-nachname/creative-project-name</code>.
+                </li>
+                <li>Die dort enthaltenen Dateien (HTML, JS, Beispielobjekte) können Sie beliebig kopieren und
+                    umbenennen.</li>
+                <li>Melden Sie sich, falls es dabei zu Problemen kommt (igor.posavec@hs-rm.de).</li>
+            </ul>
+        </section>
+
+        <!-- EINLEITUNG ZUM WORKSHOP -->
+        <section>
+            <p>
+                Im vierten Workshop-Termin „Web 3D Integration & Interactive Design“ haben Sie gelernt, wie man
+                einfache 3D-Objekte in eine bestehende Webseite einbettet und interaktiv darstellen kann.
+                Trotz der neuen und ungewohnten Inhalte entstanden bereits in der Vorlesung beeindruckende Ergebnisse.
+            </p>
+            <p>
+                Für die Semesteraufgabe sollen Sie aus den erarbeiteten Entwürfen nun ein
+                <strong>sauberes, final gestaltetes Konzept</strong> entwickeln: eine einfache Landing-Page,
+                die sowohl Ihr 3D-Objekt als auch Ihre gestalterischen Fähigkeiten zeigt.
+            </p>
+        </section>
+
+        <!-- MATERIAL: 3D FUNDAMENTALS -->
+        <section>
+            <h2>Vorlesungsmaterial – 3D Grundlagen (Blender)</h2>
+            <p>
+                In der ersten Sitzung haben wir Blender eingesetzt, um den 3D-Workflow zu verstehen.
+                Blender ist <em>optional</em>, aber hilfreich, falls heruntergeladene Modelle zu groß/klein
+                sind oder falsch ausgerichtet wirken.
+            </p>
+            <p>
+                Materialien und 3D-Szenen finden Sie unter:
+                <a href="https://igorposavec.com/neo-academia/hs-rheinmain" target="_blank">
+                    https://igorposavec.com/neo-academia/hs-rheinmain
+                </a><br>
+                <strong>Episode 1: 3D Fundamentals in Web</strong>
+                Passwort: <strong>WebCoin</strong>
+            </p>
+            <p>
+                Auf der letzten Seite finden Sie den Downloadbereich mit allen 3D-Übungsszenen aus dem Unterricht.
+            </p>
+        </section>
+
+        <!-- MATERIAL: THREE.JS -->
+        <section>
+            <h2>Vorlesungsinhalte – Three.js Integration</h2>
+
+            <p><strong>Episode 2: Your First 3D Page</strong>
+                Enthält die komplette Codebasis zum Einbinden eines 3D-Objekts in eine HTML-Seite.
+            </p>
+
+            <p><strong>Episode 3: Advanced Techniques</strong> (OrbitControls, Animationen, Format-Handling)
+                Passwort: <strong>WebCoin</strong></p>
+
+            <p>
+                Das vollständige Beispielprojekt liegt zusätzlich in GitHub unter:
+                <code>web-3d-workshop / beispielprojekt_3d_code_vorlage.zip</code>
+            </p>
+        </section>
+
+        <!-- AUFGABENBESCHREIBUNG -->
+        <section>
+            <h2><span>Aufgabe:</span> Landing-Page mit integriertem 3D-Objekt</h2>
+
+            <p>Ihre Semesteraufgabe besteht aus einer kleinen, aber vollständigen Webseite mit:</p>
+
+            <ul>
+                <li><strong>einem Textblock</strong> (Titel, Untertitel, kurze Beschreibung)</li>
+                <li><strong>einem 3D-Beobachtungsbereich</strong>, in dem Ihr Objekt sichtbar ist</li>
+            </ul>
+
+            <p>
+                Das 3D-Objekt dürfen Sie aus dem Internet herunterladen
+                (siehe „3D Assets & Props Libraries“ in Episode 1)
+                oder eines der Kursobjekte verwenden.
+            </p>
+
+            <p>
+                Gestalten Sie die Seite bitte modern und stimmig. Ziel ist eine ästhetische, klare Landing-Page.
+            </p>
+        </section>
+
+        <!-- WORKFLOW -->
+        <section>
+            <h2>Workflow – Step by Step</h2>
+
+            <ol>
+                <li>Erstellen Sie eine neue <code>index.html</code> mit zwei Spalten
+                    (links Text, rechts ein <code>&lt;div id="3d-bereich"&gt;</code>).
+                </li>
+
+                <li>Kopieren Sie den Inhalt von <code>beispielprojekt_3d_code_vorlage.zip</code> in Ihren Ordner.</li>
+
+                <li>Legen Sie Ihr eigenes 3D-Objekt als <code>.glb</code> oder <code>.gltf</code> im selben Ordner ab
+                    (z. B. <code>example.glb</code>).</li>
+
+                <li>Die Projektstruktur sollte am Ende so aussehen:
+                    <pre>
+index.html  
+example.js  
+example.css  
+example.glb  
+                </pre>
+                </li>
+
+                <li>
+                    Öffnen Sie <code>example.js</code> und deaktivieren Sie den Platzhalter-Code (Box/Sphere).
+                    Aktivieren Sie anschließend den Model-Loader und geben Sie dort Ihren Dateinamen an.
+                </li>
+
+                <li>
+                    Falls Ihr Objekt nicht sichtbar ist:
+                    Größe anpassen → Kamera verschieben → Licht prüfen.
+                </li>
+
+                <li>
+                    Optional: Aktivieren Sie <strong>OrbitControls</strong>, um das Objekt mit der Maus drehen zu können
+                    (siehe Episode 3).
+                </li>
+            </ol>
+
+        </section>
+
+        <!-- TEMPLATE HINWEIS -->
+        <section>
+            <h2>Template</h2>
+            <p>
+                Unten finden Sie ein einfaches Beispiel-Template für Ihre Seite.
+                Gestalten Sie die Seite bitte besser und passend zu Ihrer Idee oder Vorlieben.
+            </p>
+
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;3D im Web&lt;/title&gt;
+        &lt;link rel="stylesheet" href="example.css"&gt;
+
+        &lt;!-- Importmap für three.js --&gt;
+        &lt;script type="importmap"&gt;
+        {
+            "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.181.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.181.0/examples/jsm/"
+            }
+        }
+        &lt;/script&gt;
+        &lt;/head&gt;
+
+        &lt;body&gt;
+
+        &lt;div class="uk-container uk-padding"&gt;
+            &lt;div class="uk-grid-large uk-child-width-1-2@m" uk-grid&gt;
+
+            &lt;!-- LINKER TEXTBLOCK --&gt;
+            &lt;div&gt;
+                &lt;h1 class="uk-heading-medium"&gt;The Impossible Umbrella&lt;/h1&gt;
+                &lt;h2 class="uk-text-lead"&gt;A design of the most useless object for serious usage&lt;/h2&gt;
+                &lt;p&gt;
+                A playful exploration of functional failure:  
+                an umbrella that refuses to protect, misbehaves in space,  
+                and turns a simple object into a poetic contradiction.  
+                Designed to challenge expectations — and your sense of practicality.
+                &lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;!-- RECHTER 3D-BLOCK --&gt;
+            &lt;div&gt;
+                &lt;!-- Dieses div ist Platzhalter für die 3D-Ansicht. --&gt;
+                &lt;div id="3d-bereich" class="main"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Am Ende der Seite laden wir unser Script als Modul. --&gt;
+        &lt;script type="module" src="example.js"&gt;&lt;/script&gt;
+        &lt;/body&gt;
+
+        &lt;/html&gt;</code></pre>
+            P
+        </section>
+
+
+        <!-- ABGABE -->
+        <section>
+            <h2>Infos zur Abgabe</h2>
+            <p>Bitte prüfen Sie vor dem Upload:</p>
+            <ul>
+                <li>Keine Fehler in der Browser-Konsole?</li>
+                <li>HTML-Tags korrekt geschlossen?</li>
+                <li>Link zu „Workshop 4“ in Ihrer Projektkarte (<code>index.html</code>) gesetzt?</li>
+                <li>Alle Dateien committet und nach GitHub gepusht?</li>
+
+                <li>
+                    3D-Objekt nicht sichtbar?  
+                    Dateiname richtig geschrieben? Objekt im Sichtbereich?  
+                    Kamera eventuell zu nah oder zu weit weg?
+                </li>
+
+                <li>
+                    Bewegt sich nichts mehr / Code „kaputt“?  
+                    Beim Ausblenden von Cube &amp; Sphere eventuell auch dazugehörige Animationen 
+                    oder Abhängigkeiten entfernt?  
+                    Code aufmerksam lesen und nur das löschen, was wirklich getrennt werden kann.
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- ERWARTETE ERGEBNISSE -->
+        <section>
+            <h2>Erwartete Ergebnisse</h2>
+
+            <p><strong>Minimum:</strong>
+                Landing-Page mit Textblock und sichtbarem 3D-Objekt.
+            </p>
+
+            <p><strong>Gut:</strong>
+                Das Objekt rotiert automatisch und die Seite wirkt visuell stimmig.
+            </p>
+
+            <p><strong>Sehr gut:</strong>
+                Ästhetisch gestaltete Landing-Page, Objekt per Maus drehbar, sauber ausgerichtet.
+            </p>
+
+            <p>
+                Viele von Ihnen haben im Kurs bereits fast fertige Lösungen gezeigt –
+                jetzt gilt es, diese sauber abzuschließen.
+            </p>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

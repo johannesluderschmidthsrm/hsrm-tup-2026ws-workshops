@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio und git einrichten - Produktion Interaktiver Medien</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="./_assets/workshop.css">
+    <style>
+        body {
+            background-image: url('_assets/images/git_graph_like_a_tree_tile.png');
+            background-size: 10em 10em;
+            background-attachment: fixed;
+        }
+        #homebrew-command {
+            font-size:0.7em;
+        }
+    </style>
+
+    <script src="_assets/script.js"></script>
+    <script>addNavi();</script>
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <h1>Visual Studio und git einrichten</h1>
+            <p class="uk-text-center">Diese Seite erläutert die Schritte zum Einrichten Ihres Arbeitsplatzes. Sie benötigen den Text-Editor <a href="https://code.visualstudio.com/">Visual Studio Code</a> und das Versionskontrollsystem <a href="https://git-scm.com/">git</a>.</p>
+            
+            
+        </header>
+
+        <section>
+            <h2>GitHub-Account erstellen</h2>
+            <ul>
+                <li>Sollten Sie noch keinen haben, legen Sie einen <a href="https://github.com/signup">GitHub-Account</a> an.</li>
+                <li>Tragen Sie sich und Ihren Account-Namen <a
+                    href="https://docs.google.com/spreadsheets/d/1NsMGBv-9M3QFVe0jwuhDDYMxc7d6702SLNkarKuiIas/edit?usp=sharing"
+                    target="_blank">in diese Google-Tabelle</a> ein.</li>
+                <li>Für Studierende stellt GitHub kostenlose Professional-Accounts bereit. Mit diesen können Sie private Repositorys und GitHub Copilot nutzen. Besuchen Sie <a href="https://github.com/education">GitHub Education</a> und beantragen Sie Ihren Account.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Visual Studio Code installieren</h2>
+            <p>Falls noch nicht gesehen, Installieren Sie </p>
+            <ul>
+                <li><a href="https://code.visualstudio.com/">Visual Studio Code</a>.</li>
+                <li>die Extension <a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">Git Graph</a>.</li>
+                <li>die Extension <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a>.</li>
+                <li>die Extension <a href="https://marketplace.visualstudio.com/items?itemName=CelianRiboulet.webvalidator">W3C Web Validator</a>.</li>
+            </ul>
+
+            
+        </section>
+
+        <section>
+            <h2>Git installieren</h2>
+            <h3>Windows</h3>
+            <ul>
+                <li>Installieren Sie <a href="https://git-scm.com/downloads">git</a>.</li>
+                <li>Öffnen Sie die git-Bash und setzen Sie Ihren Namen mittels folgendem Befehl (ACHTUNG: meinname mit Ihrem Namen austauschen): <code>git config --global user.name "meinname"</code></li>
+                <li>Setzen Sie Ihre Mail-Adresse mittels folgendem Befehl (ACHTUNG: mymail@gmail.com mit Ihrer Mail-Adresse austauschen): <code>git config --global user.email "mymail@gmail.com"</code></li>
+            </ul>
+            
+            <h3>macOS</h3>
+            <ul>
+                <li>Installieren Sie homebrew mittels folgendem Befehl im Terminal (Programme -> Dienstprogramme):<br><code id="homebrew-command">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></li>
+                <li>Nun können Sie git im Terminal installieren: <code>brew install git</code></li>
+                <li>Setzen Sie Ihren Namen mittels folgendem Befehl (ACHTUNG: meinname mit Ihrem Namen austauschen): <code>git config --global user.name "meinname"</code></li>
+                <li>Setzen Sie Ihre Mail-Adresse mittels folgendem Befehl (ACHTUNG: mymail@gmail.com mit Ihrer Mail-Adresse austauschen): <code>git config --global user.email "mymail@gmail.com"</code></li>
+            </ul>
+        </section>
+
+        <!-- <section>
+            <h2>Projekt auschecken</h2>
+            <ul>
+                <li>Binden Sie <a href="https://getuikit.com/docs/introduction" target="_blank">UIkit</a> ein.</li>
+                <li>Erstellen Sie eine neue Section mit <a href="https://getuikit.com/docs/card" target="_blank">Card-Elementen</a>
+                    und befüllen Sie diese mit Beispiel-Inhalten.</li>
+            </ul>
+        </section> -->
+    </main>
+
+</body>
+
+</html>
