@@ -27,15 +27,14 @@
     <main>
         <header>
             <h1>Technologie und Produktion (IM/UI)<span>Workshop 1: HTML/CSS</span></h1>
-            <p class="uk-text-center">Herzlich willkommen zum ersten Workshop. In diesem Workshop geht es darum, 
-                Grundlagen von HTML (& CSS) zu wiederholen.</p>
+            <p class="uk-text-center">Herzlich willkommen zum ersten Workshop. In diesem Workshop geht es darum,
+                Grundlagen von HTML (&amp; CSS) zu wiederholen.</p>
             <!-- Kommentar -->
             <p class="uk-text-center">Vorlesungsfolien: <a href="https://docs.google.com/presentation/d/1DaXEq5PK7lp5YT3ObSE7XIOTO4RfHdaj3JO_YSJ6OnI/edit?usp=sharing" target="_blank">HTML / CSS</a>
                 <br>Abgabe: <strong>Dienstag, 05. Mai 2026</strong>. Gesamter Ordner als Zip-Datei
                 <code>vorname-nachname.zip</code> auf Stud.IP unter
                 <code>Dateien/Abgaben/ Abgaben – Workshops Technologie und Produktion/Workshop 1</code>
             </p>
-            
         </header>
 
         <section>
@@ -46,9 +45,9 @@
                 <li>die Extension <a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">Git Graph</a>.</li>
                 <li>die Extension <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a>.</li>
                 <li>die Extension <a href="https://marketplace.visualstudio.com/items?itemName=CelianRiboulet.webvalidator">W3C Web Validator</a>.</li>
+                <li>optional die Extension <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier</a> zum automatischen Formatieren Ihres Codes.</li>
             </ul>
-
-            
+            <p>Wir setzen in diesem Workshop <strong>kein</strong> LLM bzw. keine KI-Extension in Visual Studio Code voraus. Falls Sie mit KI arbeiten, nutzen Sie dafür bitte die datensparsame Hochschul-Variante unter <a href="https://ki.hs-rm.de/" target="_blank">ki.hs-rm.de</a>.</p>
         </section>
 
         <section>
@@ -60,39 +59,57 @@
                 <li>Erstellen Sie darin den Ordner <code>assets</code>.</li>
             </ul>
         </section>
-
         <section>
-            <h2>Html-Basis erstellen</h2>
-            <p>Erstellen Sie eine HTML-Datei <code>index.html</code> in Ihrem <code>vorname-nachname</code> Ordner und füllen Sie diese mit folgenden Inhalten:</p>
+            <h2>Arbeitsweise Manuell vs. KI</h2>
+            <p>Dieser Workshop ist bewusst in zwei Phasen unterteilt. Ziel ist es, eigene Fähigkeiten im HTML/CSS zu aktivieren und anschließend KI gezielt als Werkzeug zu nutzen und kritisch zu bewerten.</p>
+
+            <h3>Phase A: Manuelles Arbeiten</h3>
             <ul>
-                <li>HTML Basis-Code</li>
-                <li>Eine Hauptüberschrift (z.B. "Mein Basis-Code)"</li>
-                <li>Blindtextelemente (z.B. in <code>&lt;p&gt;</code> oder <code>&lt;section&gt;</code> Elementen)</li>
-                <li><code>&lt;style&gt;</code>-Block im <code>head</code></li>
+                <li>Erstellen Sie Ihre Seite zunächst <strong>ohne KI</strong>.</li>
+                <li>Nutzen Sie dafür Ihre bisherigen Kenntnisse, die Vorlesungsfolien und die Dokumentationen der verwendeten Werkzeuge.</li>
+                <li>Ziel ist es, ein grundlegendes Verständnis für Struktur, Inhalte und Aufbau Ihrer Seite zu aktivieren.</li>
+            </ul>
+
+            <h3>Phase B: Arbeiten mit KI</h3>
+            <ul>
+                <li>Nutzen Sie nun KI gezielt als <strong>Unterstützung</strong>.</li>
+                <li>Verwenden Sie dafür die Hochschul-KI unter <a href="https://ki.hs-rm.de/" target="_blank">ki.hs-rm.de</a>.</li>
+                <li>Lassen Sie sich z. B. UIkit-Beispiele erklären oder auf Ihr eigenes Thema anpassen.</li>
+                <li>Übernehmen Sie Vorschläge nur dann, wenn Sie verstanden haben, was der Code macht.</li>
             </ul>
         </section>
 
         <section>
-            <h2>Webfont einbinden</h2>
+            <h2>1. Html-Basis erstellen</h2>
+            <p>Erstellen Sie eine HTML-Datei <code>index.html</code> in Ihrem <code>vorname-nachname</code> Ordner und füllen Sie diese mit folgenden Inhalten:</p>
             <ul>
-                <li>Suchen Sie einen oder mehrere Fonts bei <a href="https://fonts.google.com/" target="blank">Google-Fonts</a> aus.
-                    </li>
+                <li>HTML Basis-Code</li>
+                <li>Eine Hauptüberschrift (z.B. "Mein Basis-Code)")</li>
+                <li>Blindtextelemente (z.B. in <code>&lt;p&gt;</code> oder <code>&lt;section&gt;</code> Elementen)</li>
+                <li><code>&lt;style&gt;</code>-Block im <code>head</code> oder eine separate CSS-Datei, die Sie in Ihre HTML-Datei einbinden</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Webfont einbinden</h2>
+            <ul>
+                <li>Suchen Sie einen oder mehrere Fonts bei <a href="https://fonts.google.com/" target="blank">Google-Fonts</a> aus.</li>
                 <li>Binden Sie den Webfont in Ihre HTML-Seite bzw. Ihren CSS-Code ein. Google Fonts bietet das passende Code-Snippet dafür an.</li>
                 <li>Passen Sie die Text-Formatierungen für Ihre Überschrift und Blindtext-Elemente grundlegend an. Sie können den Font in Ihrem CSS-Code per <code>font-family: "Name des ausgewählten Fonts", fall-back-font;</code> den gewünschen Elementen zuweisen. Auch diesen Code können Sie sich bei Google Fonts kopieren.</li>
             </ul>
         </section>
 
         <section>
-            <h2>UIkit einbinden</h2>
+            <h2>3. UIkit einbinden</h2>
             <ul>
                 <li>Binden Sie <a href="https://getuikit.com/docs/introduction" target="_blank">UIkit</a> ein.</li>
-                <li>Erstellen Sie eine neue Section mit <a href="https://getuikit.com/docs/card" target="_blank">Card-Elementen</a>
-                    und befüllen Sie diese mit Beispiel-Inhalten.</li>
+                <li>Nutzen Sie UIkit in diesem Workshop als <strong>Einstiegshilfe</strong>: Sie arbeiten mit HTML-Beispielen aus der Dokumentation und passen diese auf Ihre eigenen Inhalte an.</li>
+                <li>Erstellen Sie eine neue Section mit <a href="https://getuikit.com/docs/card" target="_blank">Card-Elementen</a> und befüllen Sie diese mit Beispiel-Inhalten.</li>
             </ul>
         </section>
 
         <section>
-            <h2>Bilder einfügen</h2>
+            <h2>4. Bilder einfügen</h2>
             <ul>
                 <li>Legen Sie in <code>assets</code> einen Ordner <code>images</code> an.</li>
                 <li>Exportieren Sie Bilder (eigene, KI-generierte oder freie aus dem Netz) mit Photoshop o.ä. in den Formaten
@@ -102,16 +119,32 @@
                     <code>.<a href="https://de.wikipedia.org/wiki/webP" target="_blank">webp</a></code> in den images-Ordner.<br>
                     Hinweis: Maximal 2000 px Breite, 500 kB Größe
                 </li>
-                <li>Binden Sie Bilder in Ihre Seite in UIkit-Cards ein. Nutzen Sie darüber hinaus ein Bild, das Sie der Webseite als Hintergrundbild einfügen. Hierfür können Sie sich auch Bilder generieren lassen, die sich entsprechend kacheln lassen.</li>
-                
+                <li>Binden Sie Bilder in Ihre Seite in UIkit-Cards ein. Nutzen Sie darüber hinaus ein Bild, das Sie der Webseite als Hintergrundbild einfügen. Hierfür können Sie sich auch Bilder generieren lassen, die sich entsprechend kacheln lassen. Wenn Sie Bilder mit KI erzeugen, achten Sie darauf, dass Sie diese vor der Nutzung prüfen und passend für das Web exportieren.</li>
             </ul>
         </section>
 
         <section>
-            <h2>Beispieltabelle einfügen und formatieren</h2>
+            <h2>5. Beispieltabelle einfügen und formatieren</h2>
             <ul>
-                <li>Befüllen Sie eine Tabelle mit  Steckbriefdaten (z.B. Name, Geburtstag, Hobbys, ...).</li>
+                <li>Befüllen Sie eine Tabelle mit Steckbriefdaten (z.B. Name, Geburtstag, Hobbys, ...).</li>
                 <li>Stylen Sie die Tabelle mit <a href="https://getuikit.com/docs/table" target="_blank">UIkit-Klassen</a>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Arbeitsweise KI</h2>
+            
+            <p>Führen Sie nun die Schritte 1 bis 5 mit einem LLM (z.B. <a href="https://ki.hs-rm.de/" target="_blank">ki.hs-rm.de</a>) aus bzw. nutzen Sie die KI-Extension in Visual Studio Code.</p>
+
+            <p>Benennen Sie die entsprechend generierten Dateien separat (z.B. durch ein <code>_ki</code> am Ende des Dateinamens). Experimentieren Sie gerne, bis Sie Ihr gewünschtes Ergebnis erreicht haben. Wichtig ist, dass Sie Ihr Vorgehen dokumentieren können (s.u.). Dokumentieren Sie beispielsweise Ihre Prompts.</p>
+
+            <h3>Dokumentation (AI Production Log)</h3>
+            <p>Dokumentieren Sie in einer separaten Textdatei in Ihrer Abgabe kurz Ihre Arbeit mit KI:</p>
+            <ul>
+                <li>Welche Prompts haben Sie verwendet?</li>
+                <li>Was hat gut funktioniert?</li>
+                <li>Was war problematisch oder unklar?</li>
+                <li>Was mussten Sie selbst anpassen oder korrigieren?</li>
             </ul>
         </section>
 
@@ -119,18 +152,17 @@
             <h2>Auf Validität testen</h2>
             <ul>
                 <li>Sorgen Sie dafür, dass Ihre eigenen abgegeben Dateien valide sind. Das betrifft Ihre HTML- und ggf. auch CSS-Dateien.</li>
-                <li>Ihre Dateien können Sie mit dem <a href="https://validator.w3.org/">W3C Web Validator</a> testen.</a>.</li>
+                <li>Ihre Dateien können Sie mit dem <a href="https://validator.w3.org/">W3C Web Validator</a> testen.</li>
             </ul>
         </section>
-        <section>
+
+        <!-- <section>
             <h2>GitHub-Account erstellen</h2>
             <ul>
                 <li>Folgen Sie der Anleitung auf der Unterseite <a href="visualstudio_git.html">Visual Studio und git</a></li>
             </ul>
-        </section>
+        </section> -->
     </main>
-
-     
 
 </body>
 
