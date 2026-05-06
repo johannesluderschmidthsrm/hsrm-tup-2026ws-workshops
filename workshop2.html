@@ -16,7 +16,6 @@
             background-size: 40em 40em;
             background-attachment: fixed;
         }
-
     </style>
     <script src="_assets/script.js"></script>
     <script>addNavi();</script>
@@ -25,139 +24,119 @@
 <body>
     <main>
         <header>
-            <h1>Produktion Interaktiver Medien<span>Workshop 2: Responsive</span></h1>
-            <p class="uk-text-center">Abgabe: <strong>Dienstag, 18. November 2025, 23:59 Uhr</strong> per <a
-                    href="https://github.com/hsrm-medialab/hsrm-tup-2025ws-workshops" target="_blank">GitHub</a>.
+            <h1>Produktion Interaktiver Medien<span>Workshop 2: Responsive Interfaces</span></h1>
+            <p class="uk-text-center">Abgabe: <strong>Dienstag, 19. Mai 2026, 23:59 Uhr</strong>. Gesamter Ordner als Zip-Datei
+                <code>vorname-nachname.zip</code> auf Stud.IP unter
+                <code>Dateien/Abgaben/ Abgaben – Workshops Technologie und Produktion/Workshop 2</code>.
             </p>
 
-            <p class="uk-text-center">Ziel dieses Workshops ist es, Sie mit der Arbeit im Team und mit UIkit vertraut zu machen. Außerdem erarbeiten
-                wir eine gemeinsame Website mit Ihren Workshop-Ergebnissen. Ich habe Sie deshalb in Gruppen eingeteilt, die nicht den Projektgruppen 
-                entsprechen. Dies ermöglicht es Ihnen zu erlernen, wie die einzelnen Schritte beim Arbeiten im Team mit git, VSCode und GitHub sind.
-            </p>
+            <p class="uk-text-center">Ziel dieses Workshops ist es, responsive Layouts mit UIkit-Grids zu verstehen, gezielt für unterschiedliche Bildschirmgrößen zu gestalten und erste kleine JavaScript-Interaktionen zu ergänzen. Außerdem vergleichen Sie wieder eine manuelle Arbeitsweise mit KI-gestützter Unterstützung.</p>
         </header>
 
         <section>
-            <h2>Visual Studio und git einrichten</h2>
+            <h2>Vorbereitung</h2>
             <ul>
-                <li> <a
-                href="visualstudio_git.html" target="_blank">Richten Sie Ihre Arbeitsumgebung ein.</a></li>
-                <li>Manchmal dauert die Installation etwas länger. Nutzen Sie die Zeit, um sich <a
-                    href="https://github.com/hsrm-medialab/git-github-fundamentals-lagerkoller" target="_blank">die
-                    Git-Einführung</a> durchzuschauen / durchzuarbeiten.</li>
+                <li>Öffnen Sie Ihren Ordner <code>tup-workshop/vorname-nachname</code> in Visual Studio Code.</li>
+                <li>Erstellen Sie für diesen Workshop eine neue Datei <code>workshop2.html</code>.</li>
+                <li>Sie können Ihre Datei aus Workshop 1 als Ausgangspunkt kopieren und anpassen.</li>
+                <li>Legen Sie zusätzlich eine Datei <code>workshop2.js</code> in Ihrem <code>assets</code>-Ordner an. Diese Datei nutzen wir später für eine erste JavaScript-Interaktion.</li>
+                <li>Achten Sie weiterhin auf kleine Dateinamen ohne Leerzeichen, Umlaute und Sonderzeichen.</li>
             </ul>
         </section>
 
         <section>
-            <h2>Repository einrichten</h2>
-            <p>Die Workshop-Webseite soll sich zukünftig aus Kacheln mit jeweils einem Portrait von Ihnen und darunter den Links auf Ihre Workshop-Ergebnisse aufbauen, ungefähr so: 
-                <img src="_assets/images/beispiel-kacheln.jpg" alt="Beispiel-Kacheln" style="max-width: 100%;"></p>
-                Deshalb werden wir in diesem Workshop die Grundlagen für diese Seite legen. Dazu müssen Sie folgende Schritte durchführen. 
-            </p>
+            <h2>Aufgabe 1: Inhalt und Grundstruktur</h2>
+            <p>Erstellen Sie eine kleine responsive Themenseite. Das Thema können Sie frei wählen, z. B. ein Medienprodukt, eine App, ein Spiel, eine Technologie, ein KI-Tool, eine Ausstellung oder ein interaktives Erlebnis.</p>
             <ul>
-                <li>Jede:r von Ihnen wurde von mir in eine Gruppe eingeteilt, die jeweils aus vier bis fünf Personen besteht. Zu jeder Gruppe gibt es ein Repository in GitHub, zu dem ich 
-                    Sie eingeladen habe. Nehmen Sie die Einladung an, falls das noch nicht geschehen ist.</li>
-                <li>Klonen Sie das Repository, zu dem ich Sie eingeladen habe, mit VSCode in ein Verzeichnis, in dem sie es gut wiederfinden (also nicht irgendwo in Downloads). Diesen Schritt müssen Sie nur einmal machen! Wie Sie mit VSCode mit git klonen und generell arbeiten, finden Sie <a
-                    href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git" target="_blank">hier</a>.</li>
-                <li>Dieses Arbeitsverzeichnis öffnen Sie bitte in VSCode und machen sich mit der Struktur vertraut.</li>    
-                <li>Wechseln Sie in der git-Bash (Windows) oder im Terminal (macOS) in das Repository-Verzeichnis. Das tun Sie, indem Sie <code>cd</code> gefolgt von einem Leerzeichen eingeben, den Repository-Ordner im Explorer (Windows) bzw. Finder (macOS)
-                auf git-Bash bzw. das Terminal ziehen und Enter drücken.</code> Ich habe Ihnen ein Skript in das Repository gelegt, das git so konfiguriert, dass Sie (hoffentlich) bei der Benamung von Dateien weniger Fehler machen. Führen Sie dieses Skript in der git-Bash oder im Terminal aus:
-                    <code>bash setup-hooks.sh</code>
-                    Als Ergebnis sollten Sie erhalten "Git hooks have been set up successfully". Falls nicht, fragen Sie bitte mich gerne.</li>
-                </li>
-            </ul>
-            <p><img src="_assets/images/beispiel-terminal.png" alt="Beispiel-Terminal" style="max-width: 100%;"></p>
-        </section>
-
-        <section>
-            <aside class="git-alert">
-                <h4>Weniger Stress mit git:</h4>
-                <ul>
-                    <li>Von Anfang an <b>alle</b> <strong>Ordner-, Dateinamen und Endungen</strong> ausschließlich
-                        </strong>klein und ohne Sonderzeichen schreiben. Verwenden Sie niemals Leerzeichen am Anfang
-                        oder Ende von Ordner- oder Dateinamen!</li>
-                    <li>Mit <strong>pull</strong> holen Sie die Änderungen vom Server in Ihr Arbeitsverzeichnis.</li>
-                    <li>Wenn ein oder mehrere <strong>merge</strong>-Konflikte auftauchen, müssen diese alle gelöst und
-                        das Ergebnis commited werden, bevor Sie irgendwas anderes machen!</li>
-                    <li>Geben Sie vor dem <strong>Commit</strong> immer eine eine kurze Beschreibung ein und überprüfen Sie, ob das wirklich auch alles Änderungen sind, die sie weitergeben wollen oder ob Sie etwas zurückalten oder <strong>revert</strong>en wollen.</li>
-                    <li>Führen Sie danach ein <strong>push</strong> 8bzw. Synchronisieren aus.</li>
-                    <li>Folgende Dinge bitte erst mal nicht verwenden: Branches, Rebase, Terminal-Befehle (außer zum
-                        git-Installieren und Nutzernamen-Setzen)</li>
-                </ul>
-                <p>Hier finden Sie einen <a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git"
-                        target="_blank">einen kurzen Einstieg zu Git in VSCode</a> und hier eine <a
-                        href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank">ausführlichere
-                        Hilfeseite mit Videos.</a></p>
-            </aside>
-        </section>
-
-
-        
-        <section>
-            <h2>Git: Committen und Pushen</h2>
-            <ul>
-                <li>Kopieren Sie den beim letzten mal erstellten Ordner <code>vorname-nachname/</code> in das
-                    Arbeitsverzeichnis. Ab jetzt arbeiten Sie fast nur noch in diesem Ihrem Verzeichnis!</li>
-                <li>Benennen Sie die <code>index.html</code> in <code>workshop1.html</code> um.</li>
-                <li>Überprüfen Sie, ob alle Dateinamen in diesem Verzeichnis klein und ohne Umlaute geschrieben sind und
-                    das Verzeichnis keine zu großen Bilder enthält.</li>
-                <li>Sicherheitshalber noch mal einen Git-Pull durchführen.</li>
-                <li>Committen Sie Ihre Änderungen und geben dabei eine Zusammenfassungszeile an.</li>
-                <li>Pushen Sie Ihre Änderungen.</li>
-                <li>Schauen Sie sich das Repository auf GitHub an.</li>
+                <li>Erstellen Sie eine klare Seitenstruktur mit <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> und mehreren <code>&lt;section&gt;</code>-Abschnitten.</li>
+                <li>Ergänzen Sie eine Hauptüberschrift, kurze Einleitung und mindestens drei Inhaltsabschnitte.</li>
+                <li>Nutzen Sie Bilder aus Ihrem <code>assets/images</code>-Ordner oder geeignete eigene bzw. frei nutzbare Bilder.</li>
+                <li>Ergänzen Sie mindestens eine Card-Gruppe mit mehreren kurzen Informationselementen.</li>
             </ul>
         </section>
 
         <section>
-            <h2>UIkit: Layout anlegen</h2>
+            <h2>Aufgabe 2: Responsive Layout mit UIkit-Grids</h2>
+            <p>Bauen Sie rund um Ihre Inhalte ein responsives Layout mit <a href="https://getuikit.com/docs/grid" target="_blank">UIkit-Grids</a>. Arbeiten Sie dabei bewusst <strong>mobile first</strong>: Auf kleinen Bildschirmen sollen Inhalte gut untereinander lesbar sein; auf größeren Bildschirmen dürfen sie nebeneinander stehen.</p>
             <ul>
-                <li>Kopieren Sie die Daten aus <a href="https://im25ws.rheinmain-interaktiv.de/workshop/_data-workshop/_base/base.zip"><code>data-workshop/base</code></a> in Ihr <code>vorname-nachname/</code>
-                    Verzeichnis (Achtung: Überschreiben Sie ihr vorhandenes JS und CSS nicht sondern verwenden sie diese
-                    Dateien ggf weiter).</li>
-                <li>Benennen Sie die <s><code>base.html</code></s> in <code>workshop2.html</code> um.</li>
-                <li>Füllen Sie nun die <code>main</code>-Spalte mit gegliedertem Text. Diesen Text müssen Sie nicht
-                    selbst schreiben. Dafür können Sie z.B. Blindtext verwenden oder einen Wikipedia-Artikel
-                    kopieren.</li>
-                <li>Gliedern Sie die Hauptabschnitte in <code>&lt;section&gt;</code>-Abschnitte. Jede davon sollte eine
-                    Überschrift (<code>&lt;h2&gt;</code>) haben.</li>
-
-                <li>Bauen Sie nun rund um diesen Beispieltext ein Layout mit <a href="https://getuikit.com/docs/grid"
-                        target="_blank">UIkit-Grids</a> auf. Wenden Sie dabei das in der Vorlesung Erlernte an.
-                    <ul>
-                        <li>Verwenden Sie die <code>.uk-container</code>-Klasse zum Begrenzen der Hauptspalten.</li>
-                        <li>Verwenden Sie <code>.uk-grid</code> um die Texte in Spalten zu gliedern.</li>
-                        <li>Nutzen sie <code>.uk-card</code> Listen, um kurze Informationsteile hervorzuheben.</li>
-                        <li>Sie können einem Element mehrere Klassen zuweisen (z.B.
-                            <code>class="uk-width-1-2 uk-card")</code></li>
-                    </ul>
-                </li>
-                <li>Passen Sie die Grid-Klassen mit <code>@s @m @l</code> usw. so an, dass z.B. Spalten erst ab den
-                    gewünschten Breakpoints nebeneinanderstehen. Arbeiten Sie dabei "mobile first".</li>
-                <li>Passen Sie die Schriften, Farben und Hintergründe der Seite nach Ihrem Geschmack an.</li>
-
+                <li>Verwenden Sie die <code>.uk-container</code>-Klasse zum Begrenzen der Hauptspalte.</li>
+                <li>Verwenden Sie <code>.uk-grid</code> und passende Breitenklassen, um Inhalte in Spalten zu gliedern.</li>
+                <li>Nutzen Sie Breakpoints wie <code>@s</code>, <code>@m</code> und <code>@l</code>, z. B. <code>uk-child-width-1-2@s</code>, <code>uk-child-width-1-3@m</code> oder <code>uk-child-width-1-4@l</code>. Nutzen Sie min. zwei Breakpoints.</li>
+                <li>Testen Sie Ihr Layout im Browser mit unterschiedlichen Fensterbreiten und mit den Developer Tools.</li>
             </ul>
         </section>
 
         <section>
-            <h2>Testen, verlinken und veröffentlichen</h2>
-
+            <h2>Aufgabe 3: Layout verstehen und dokumentieren</h2>
+            <p>Responsive Design bedeutet nicht nur, Klassen zu kopieren, sondern vorherzusagen, wie sich ein Layout bei unterschiedlichen Bildschirmgrößen verhält.</p>
             <ul>
-                <li>Testen Sie die in diesem Workshop erzeugten Dateien mit dem W3C-Validator. Sind alle Datei- und
-                    Verzeichnisnamen klein und ohne Sonderzeichen geschrieben?</li>
-                <li>Ergänzen Sie in der index.html Ihres Repositories Ihr Portrait und die Verlinkungen
-                    <ul>
-                        <li>Duplizieren Sie dazu die <code>article</code> Vorlage in der <code>index.html</code></li>
-                        <li>Referenzieren Sie Ihr Portrait-Photo (das kleiner gerechnet in ihrem Namens-Verzeichnis
-                            liegen sollte) in <code>&lt;img src=".."&gt;</code></li>
-                        <li>Ergänzen Sie Ihren Namen</li>
-                        <li>Verlinken Sie Ihre Workshop-Ergebnisse (Link auf ihren Unterordner)</li>
-                    </ul>
-                    Diesen Schritt sollten Sie in einem eigenen Commit durchführen um Bearbeitungskonflikte zu
-                    vermeiden.
-                </li>
-                <li>Pushen Sie Ihren Stand auf den Server.</li>
-                <li>Testen Sie Ihre Seiten hier auf dem Server. Auch mit dem Smartphone.</li>
+                <li>Wählen Sie einen Grid-Abschnitt aus Ihrer Seite aus.</li>
+                <li>Beschreiben Sie kurz, wie dieser Abschnitt auf Smartphone, Tablet und Desktop aussieht.</li>
+                <li>Ergänzen Sie diese Beschreibung direkt in Ihrer HTML-Datei als Kommentar.</li>
+                <li>Beantworten Sie dabei: Wie viele Spalten sind sichtbar? Wann brechen Inhalte in die nächste Zeile um?</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Aufgabe 4: Erste JavaScript-Interaktion</h2>
+            <p>Ergänzen Sie eine kleine Interaktion mit JavaScript. Ziel ist nicht komplexe Programmierung, sondern ein erster Eindruck davon, wie sich HTML-Elemente dynamisch verändern lassen.</p>
+            <ul>
+                <li>Binden Sie Ihre Datei <code>workshop2.js</code> am Ende Ihrer HTML-Datei ein.</li>
+                <li>Erstellen Sie einen Button oder Link, der eine sichtbare Änderung auf der Seite auslöst.</li>
+                <li>Beispiel: Ein zusätzlicher Infotext wird ein- und ausgeblendet.</li>
+                <li>Alternativ: Eine Card erhält beim Klick eine zusätzliche Klasse, ein Hinweisbereich wird geöffnet oder ein einfacher Dark-/Light-Modus wird umgeschaltet.</li>
+            </ul>
+            <p>Ein sehr einfaches Beispiel:</p>
+            <pre><code>document.querySelector('#info-button').addEventListener('click', function () {
+    document.querySelector('#zusatzinfo').classList.toggle('uk-hidden');
+});</code></pre>
+        </section>
+
+        <section>
+            <h2>Arbeitsweise im Workshop: Manuell vs. KI</h2>
+            <p>Arbeiten Sie wie in Workshop 1 bewusst in zwei Phasen. So können Sie vergleichen, was Sie selbst lösen können und wo KI sinnvoll unterstützt.</p>
+
+            <h3>Phase A: Manuelles Arbeiten</h3>
+            <ul>
+                <li>Erstellen Sie zunächst selbst ein responsives Grundlayout.</li>
+                <li>Nutzen Sie dafür Ihre Vorlesungsfolien, die UIkit-Dokumentation und die Beispiele aus dem Workshop.</li>
+                <li>Testen Sie Ihr Layout im Browser und passen Sie es selbst an.</li>
             </ul>
 
+            <h3>Phase B: Arbeiten mit KI</h3>
+            <ul>
+                <li>Nutzen Sie anschließend die Hochschul-KI unter <a href="https://ki.hs-rm.de/" target="_blank">ki.hs-rm.de</a>.</li>
+                <li>Lassen Sie sich z. B. Ihr Grid erklären, alternative Breakpoints vorschlagen oder Ihre kleine JavaScript-Interaktion erklären.</li>
+                <li>Übernehmen Sie Vorschläge nur dann, wenn Sie verstanden haben, was der Code macht.</li>
+            </ul>
+
+            <p><strong>Mögliche Prompts:</strong></p>
+            <ul>
+                <li><code style="white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">Erkläre mir dieses UIkit-Grid. Wie viele Spalten entstehen auf Smartphone, Tablet und Desktop?</code></li>
+                <li><code style="white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">Schlage mir passende UIkit-Breakpoints für ein responsives Card-Layout mit sechs Elementen vor. Erkläre die Klassen kurz.</code></li>
+                <li><code style="white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">Erkläre mir diesen JavaScript-Code Schritt für Schritt. Was passiert beim Klick auf den Button?</code></li>
+                <li><code style="white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">Vereinfache diesen HTML-Code für Anfänger:innen, ohne die Funktion zu verändern.</code></li>
+            </ul>
+
+            <h3>Dokumentation (AI Production Log)</h3>
+            <p>Dokumentieren Sie am Ende Ihrer Abgabe kurz Ihre Arbeit mit KI (ca. 5–10 Zeilen in einer Textdatei oder als Kommentar am Ende Ihrer Abgabe):</p>
+            <ul>
+                <li>Welche Prompts haben Sie verwendet?</li>
+                <li>Was hat KI beim Responsive Layout gut erklärt oder verbessert?</li>
+                <li>Was war problematisch, zu kompliziert oder falsch?</li>
+                <li>Was mussten Sie selbst anpassen oder korrigieren?</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Testen und Abgabe</h2>
+            <ul>
+                <li>Testen Sie Ihre Seite mit unterschiedlichen Browserbreiten und mit den Developer Tools.</li>
+                <li>Prüfen Sie, ob alle Bilder korrekt geladen werden und die Dateigrößen angemessen sind.</li>
+                <li>Testen Sie Ihre HTML-Datei mit dem <a href="https://validator.w3.org/" target="_blank">W3C Web Validator</a>.</li>
+                <li>Prüfen Sie, ob Ihre JavaScript-Konsole Fehlermeldungen zeigt.</li>
+                <li>Geben Sie Ihren gesamten Ordner <code>vorname-nachname</code> als ZIP-Datei ab.</li>
+            </ul>
         </section>
 
     </main>
