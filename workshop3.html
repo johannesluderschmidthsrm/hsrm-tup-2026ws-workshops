@@ -34,8 +34,9 @@
         <header>
             <h1>Produktion Interaktiver Medien<span>Workshop 3: JavaScript</span></h1>
             <p class="uk-text-center">
-                <br>Abgabe: <strong>Dienstag, 2. Dezember 2025</strong> per <a
-                    href="https://github.com/hsrm-medialab/hsrm-pim-2025ws-workshops" target="_blank">GitHub</a>.
+                <br>Abgabe: <strong>Dienstag, 2. Juni 2026</strong> Gesamter Ordner als Zip-Datei
+                <code>vorname-nachname.zip</code> auf Stud.IP unter
+                <code>Dateien/Abgaben/ Abgaben – Workshops Technologie und Produktion/Workshop 3</code>.
             </p>
         </header>
         <section>
@@ -55,16 +56,15 @@
 
         <section>
             <p>Im dritten Workshop-Termin geht es darum, Ihre JavaScript-Kenntnisse
-                mithilfe von jQuery zu nutzen, um Veränderungen in der Seite durchzuführen und auf
+                zu nutzen, um Veränderungen in der Seite durchzuführen und auf
                 Events zu
                 reagieren. Die zugehörigen Referenzen finden Sie unter: <a
-                    href="https://api.jquery.com/">api.jquery.com</a> und <a
                     href="https://developer.mozilla.org/de/docs/Web/JavaScript">developer.mozilla.org</a>
             </p>
             <h2><span>Aufgabe 1: </span>Mit JavaScript experimentieren</h2>
-            <p>Im Beispielverzeichnis finden Sie die Datei <code>jQueryTest.html</code>. Erstellen Sie von dieser eine Kopie und nennen Sie diese <code>js-experimente.html</code>. Probieren
+            <p>Im Beispielverzeichnis finden Sie die Datei <code>jsTest.html</code>. Erstellen Sie von dieser eine Kopie und nennen Sie diese <code>js-experimente.html</code>. Probieren
                     Sie darin jedes der unten aufgelisteten Code-Beispiele aus. Sorgen Sie dafür, dass der
-                    gesamte jQuery-Code innerhalb von <code class="c3">$(function () { });</code> in <code>js-experimente.html</code> ausgeführt wird. Um die Ausgaben der Funktion <code class="c3">console.log()</code> zu
+                    gesamte JavaScript-Code innerhalb von <code class="c3">document.addEventListener('DOMContentLoaded', function () { });</code> in <code>js-experimente.html</code> ausgeführt wird. Um die Ausgaben der Funktion <code class="c3">console.log()</code> zu
                     lesen, öffnen Sie die Browser-Konsole:</p>
             <ul>
                 <li><span>Firefox: </span><span class="c28"><a class="c25"
@@ -82,8 +82,16 @@
             <h3>Ereignisse verarbeiten</h3>
             <p><span>Mit folgendem Code können Sie eine Funktion für einen Klick auf Element(e)
                     registrieren.</span></p>
-            <pre><code class="language-javascript">$('[css selektor]').click( function (e) {
+            <pre><code class="language-javascript">// Einzelnes Element
+document.querySelector('[css selektor]').addEventListener('click', function (e) {
     console.log('Folgendes Ereignis ist aufgetreten: ', e);
+});
+
+// Mehrere Elemente
+document.querySelectorAll('[css selektor]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+        console.log('Folgendes Ereignis ist aufgetreten: ', e);
+    });
 });
 </code></pre>
 
@@ -105,48 +113,48 @@
                     allein in CSS
                     definiert:</span></p>
             <pre><code class="language-javascript">// Klassen hinzufügen
-$('[css selektor]').addClass('meine-klasse'); 
+document.querySelector('[css selektor]').classList.add('meine-klasse');
 
 // Klassen entfernen
-$('[css selektor]').removeClass('meine-klasse'); 
+document.querySelector('[css selektor]').classList.remove('meine-klasse');
 </code></pre>
             <p><span>Mit Hilfe der toggle-Funktion kann man einfach einen Klassennamen abwechselnd
                     hinzufügen oder entfernen ohne vorher überprüfen zu müssen, um welchen Zustand
                     es gerade
                     geht.</span></p>
             <pre><code class="language-javascript">// Klassen wechseln
-$('[css selektor]').toggleClass('meine-klasse');
+document.querySelector('[css selektor]').classList.toggle('meine-klasse');
 </code></pre>
 
 
             <h3>Ein- und Ausblenden</h3>
-            <p><span class="c2">Sie können Elemente direkt mit jQuery ein und ausblenden und sogar
+            <p><span class="c2">Sie können Elemente direkt mit JavaScript ein und ausblenden und sogar
                     löschen.</span></p>
-            <pre><code class="language-javascript">$('[css selektor]').hide(); // Setzt Element auf diplay:none;
-$('[css selektor]').show(); // Entfernt display:none;
-$('[css selektor]').toggle(); // Wechselt zwischem beidem
-$('[css selektor]').remove(); // Löscht das oder die Elemente
+            <pre><code class="language-javascript">document.querySelector('[css selektor]').style.display = 'none'; // Ausbleden
+document.querySelector('[css selektor]').style.display = '';     // Einblenden
+document.querySelector('[css selektor]').remove();               // Löscht das Element
 </code></pre>
 
             <p><span class="c2">Eleganter ist es aber, in CSS eine Klasse zu definieren und diese dann zu
                     setzen:</span></p>
             <pre><code class="language-css">.hidden {
     display:none!important; /* Ja, hier macht !important Sinn */
-}                        
+}
 </code></pre>
-            <pre><code class="language-javascript">$('[css selektor]').addClass('hidden'); // Setzt die Klasse                    
+            <pre><code class="language-javascript">document.querySelector('[css selektor]').classList.add('hidden'); // Setzt die Klasse
 </code></pre>
 
             <h3>CSS-Eigenschaften ändern</h3>
             <p><span>Mit JavaScript kann man auch direkt </span><span class="c2">CSS-Eigenschaften
                     ändern. Auch z.B. bei allen Artikeln. </span></p>
-            <pre><code class="language-javascript">$('article').css('color', 'red');
-$('article').css('padding', '50px');
+            <pre><code class="language-javascript">// Einzelnes Element
+document.querySelector('article').style.color = 'red';
+document.querySelector('article').style.padding = '50px';
 
-// Alternative Schreibweise mit Objektliteral
-$('article').css({
-    'color': 'red',
-    'padding': '50px'
+// Alle passenden Elemente
+document.querySelectorAll('article').forEach(function (el) {
+    el.style.color = 'red';
+    el.style.padding = '50px';
 });
 </code></pre>
 
@@ -160,7 +168,7 @@ $('article').css({
 
 <section>
             <h2><span>Aufgabe 2a:</span> Artikel aus- und einblenden</h2>
-            <p><span>Erstellen Sie eine neue Kopie von </span><code class="c1">jQueryTest.html</code>&nbsp;und benennen diese in <code class="c1">workshop3.html</code>um. Verschieben Sie diese Datei in Ihr <code>vorname-nachname</code>-Verzeichnis. Sorgen Sie dafür, dass die CSS-Datei aus <code>js-workshop/css</code> richtig eingebunden wird. Fügen Sie in <code class="c1">workshop3.html</code> einen
+            <p><span>Erstellen Sie eine neue Kopie von </span><code class="c1">jsTest.html</code>&nbsp;und benennen diese in <code class="c1">workshop3.html</code>um. Verschieben Sie diese Datei in Ihr <code>vorname-nachname</code>-Verzeichnis. Sorgen Sie dafür, dass die CSS-Datei aus <code>js-workshop/css</code> richtig eingebunden wird. Fügen Sie in <code class="c1">workshop3.html</code> einen
                     Navigationspunkt “Fließtext ein-/ausblenden” hinzu. Bauen Sie die Code-Beispiele
                     aus Aufgabe 1
                     so zusammen, dass beim Klick auf “Fließtext ein-/ausblenden” alle Absätze
@@ -196,12 +204,14 @@ $('article').css({
                 <li><span>Ergänzen Sie Ihr JavaScript so, dass es beim Klick auf eine
                         Überschrift innerhalb dieser Elemente im darüber liegenden </span><span class="c30 c11">.klapper
                     </span><span>die Klasse &nbsp;</span><span class="c30 c11">open
-                    </span><span>ergänzt/entfernt. Nutzen Sie dabei die jQuery-Funktion um die
-                        übergeordneten
+                    </span><span>ergänzt/entfernt. Nutzen Sie dabei <code>closest()</code>, um das
+                        übergeordnete
                         Element zu erreichen:</span></li>
             </ol>
-            <pre><code class="language-javascript">$('.klapper h2').click(function(){
-    $(this).parents('.klapper').toggleClass('open');
+            <pre><code class="language-javascript">document.querySelectorAll('.klapper h2').forEach(function (h2) {
+    h2.addEventListener('click', function () {
+        this.closest('.klapper').classList.toggle('open');
+    });
 });</code></pre>
             <ol start="3">
                 <li><span>Ergänzen Sie ihr CSS so, dass mit Ausnahme der Überschrift die
@@ -230,7 +240,7 @@ $('article').css({
             <p><span class="c2">Sicherlich kennen Sie den Effekt auf One-Page-Seiten, mit dessen Hilfe
                     Sie durch Klicken auf Elemente in der Navigation zu bestimmten Bereichen der
                     Seite animiert
-                    scrollen. Diesen Effekt können Sie relativ einfach mit jQuery umsetzen. </span>
+                    scrollen. Diesen Effekt können Sie relativ einfach mit Vanilla JavaScript umsetzen. </span>
             </p>
 
             <p><span>Normalerweise werden Sprünge in der Seite mit Anker-Links umgesetzt. D. h. dass an
@@ -265,28 +275,27 @@ $('article').css({
                         class="c1">#</code>&nbsp;enthält, mit einem Click-Listener. </li>
                 <li><span class="c2">In diesem Listener soll detektiert werden, ob es ein
                         Element mit dem im Anker definierten Link gibt. </span></li>
-                <li>Wenn das so ist, dann soll mit der jQuery-Funktion animate zur
-                        Position diese Ziels gescrollt werden. Das erreichen Sie mit folgendem
+                <li>Wenn das so ist, dann soll zur Position dieses Ziels gescrollt werden. Das erreichen Sie mit folgendem
                         Code (Sie finden Ihn auch unter <code
                         class="c1">js-workshop/example-code.js</code>).</li>
             </ol>
 
-            <pre><code class="language-javascript">$('a[href*="#"]').click(function (e) {
+            <pre><code class="language-javascript">document.querySelectorAll('a[href*="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
 
-    // Sprungziel ermitteln  
-    var href = $(this).attr('href'),
-        $scrollAim = $(href);
+        // Sprungziel ermitteln
+        var href = this.getAttribute('href');
+        var scrollAim = document.querySelector(href);
 
-    // Abbrechen wenn kein Sprungziel gefunden    	 
-    if ($scrollAim.length == 0) return;
+        // Abbrechen wenn kein Sprungziel gefunden
+        if (!scrollAim) return;
 
-    // Automatisches Scrollen verhindern
-    e.preventDefault();
+        // Automatisches Scrollen verhindern
+        e.preventDefault();
 
-    // Zum Sprungziel animieren
-    $('html,body').animate({
-                scrollTop: $scrollAim.offset().top
-    }, 700);
+        // Zum Sprungziel animiert scrollen
+        scrollAim.scrollIntoView({ behavior: 'smooth' });
+    });
 });</code></pre>
         </section>
 
@@ -354,22 +363,27 @@ $('article').css({
                         bereits kennengelernt
                         haben. Der weiter JS-Code gehört dann dahinein.</span></li>
             </ol>
-            <pre><code class="language-javascript">$('a.lightbox-link').click(function(e){
-    e.preventDefault();
-    // Hier kommt der Code hin
+            <pre><code class="language-javascript">document.querySelectorAll('a.lightbox-link').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Hier kommt der Code hin
+    });
 });
 </code></pre>
             <ol start="3">
-                <li>Nun erzeugen Sie mit jQuery ein neues HTML-Element mit der korrekten Bild-URL:</li>
+                <li>Nun erzeugen Sie ein neues HTML-Element mit der korrekten Bild-URL:</li>
             </ol>
-            <pre><code class="language-javascript">var $html = $('&lt;section class="lightbox"&gt;&lt;button class="btn-close"&gt;Bild Schließen&lt;/button&gt;&lt;figure&gt;&lt;img src="' + this.href + '"&gt;&lt;figcaption&gt;Ihr großes Bild&lt;/figcaption&gt;&lt;/figure&gt;&lt;/section&gt;');
+            <pre><code class="language-javascript">var section = document.createElement('section');
+section.className = 'lightbox';
+section.innerHTML = '&lt;button class="btn-close"&gt;Bild Schließen&lt;/button&gt;'
+    + '&lt;figure&gt;&lt;img src="' + this.href + '"&gt;&lt;figcaption&gt;Ihr großes Bild&lt;/figcaption&gt;&lt;/figure&gt;';
 </code></pre>
             <ol start="4">
-                <li><span>Dieses HTML-Element fügen Sie nun mit der </span><span class="c3">append</span>-Funktion vor
+                <li><span>Dieses HTML-Element fügen Sie nun mit </span><span class="c3">appendChild</span> vor
                     dem schließenden body-Tag ein.
                 </li>
             </ol>
-            <pre><code class="language-javascript">$('body').append( $html );</code></pre>
+            <pre><code class="language-javascript">document.body.appendChild(section);</code></pre>
             <ol start="5">
                 <li><span>Es ist Ihre Aufgabe, dieses HTML per CSS so zu stylen, dass es
                         groß über allen anderen Inhalten liegt. Verwenden Sie dazu die
@@ -381,18 +395,15 @@ $('article').css({
             </ol>
 
             <ol start="6">
-                <li><span>Nun sollten Sie noch einen neuen Click-Handler auf die den
+                <li><span>Nun sollten Sie noch einen neuen Click-Handler auf den
                         Schließen-Button legen, um das große Bild wieder entfernen zu können.
-                        Hierfür suchen sie in
-                    </span><code class="c3">$html</code><span>&nbsp;mit der jQuery-Funktion
-                    </span><span class="c3">find</span><span>&nbsp;den Button. </span><span
-                        class="c3">find()</span><span>&nbsp;erwartet dabei dieselbe Art von
-                        Selektoren wie
-                    </span><code class="c3">$().</code></li>
+                        Hierfür suchen Sie in
+                    </span><code class="c3">section</code><span>&nbsp;mit
+                    </span><code class="c3">querySelector</code><span>&nbsp;den Button.</span></li>
             </ol>
-            <pre><code class="language-javascript">$html.find('.btn-close').click(function(e){
-    $html.remove();
- });</code></pre>
+            <pre><code class="language-javascript">section.querySelector('.btn-close').addEventListener('click', function () {
+    section.remove();
+});</code></pre>
             <ol start="7">
                 <li><span class="c2">Abschließend können Sie noch ein wenig Kosmetik
                         machen (optional):</span></li>

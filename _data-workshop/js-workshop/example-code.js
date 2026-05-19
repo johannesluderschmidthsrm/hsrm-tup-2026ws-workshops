@@ -1,15 +1,15 @@
-$('a[href*="#"]').click(function (e) {
-    var href = $(this).attr('href'),
-        $scrollAim = $(href);
+document.querySelectorAll('a[href*="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
+        var scrollAim = document.querySelector(href);
 
-    // Abbrechen wenn kein Sprungziel gefunden         
-    if ($scrollAim.length == 0) return;
+        // Abbrechen wenn kein Sprungziel gefunden
+        if (!scrollAim) return;
 
-    // Automatisches Scrollen verhindern
-    e.preventDefault();
-    
-    // Zum Sprungziel animieren
-    $('html,body').animate({
-        scrollTop: $scrollAim.offset().top
-    }, 700);
+        // Automatisches Scrollen verhindern
+        e.preventDefault();
+
+        // Zum Sprungziel animiert scrollen
+        scrollAim.scrollIntoView({ behavior: 'smooth' });
+    });
 });
