@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 6 - TouchDesigner 1</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="./_assets/workshop.css">
+    <style>
+        body {
+            background-image: url('_assets/images/tile_line_topographic.webp');
+            background-size: 40em 40em;
+            background-attachment: fixed;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #464646;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 0.5rem 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+    </style>
+    <script src="_assets/script.js"></script>
+    <script>addNavi();</script>
+</head>
+
+<body>
+
+    <main>
+
+        <!-- HEADER -->
+        <header>
+            <h1>Technologie und Produktion
+                <span>Workshop 6: TouchDesigner – Einführung</span>
+            </h1>
+            <p class="uk-text-center">
+                <br>Abgabe: <strong>Mittwoch, 15. Juli 2026</strong> – Ordner als ZIP-Datei
+                <code>vorname_nachname_workshop6.zip</code> auf Stud.IP.
+            </p>
+        </header>
+
+        <!-- EINLEITUNG -->
+        <section>
+            <p>
+                In den Workshops 6 und 7 arbeiten Sie mit
+                <strong>TouchDesigner</strong> – einer node-basierten visuellen Programmierumgebung
+                für Echtzeit-Visualisierungen, die vor allem in der Medienkunst und bei Live-Events eingesetzt wird.
+            </p>
+            <p>
+                Im heutigen Workshop 6 lernen Sie die Oberfläche kennen und bauen zwei geführte Tutorials nach,
+                die Sie mit eigenen Assets individualisieren. In Workshop 7 erstellen Sie dann
+                eine Videoprojektion mit KantanMapper.
+            </p>
+        </section>
+
+        <!-- TOUCHDESIGNER INSTALLIEREN -->
+        <section>
+            <h2>TouchDesigner installieren</h2>
+            <ul>
+                <li>
+                    Laden Sie TouchDesigner unter
+                    <a href="https://derivative.ca/download" target="_blank">derivative.ca/download</a>
+                    herunter (kostenlose Non-Commercial-Lizenz genügt).
+                </li>
+                <li>
+                    Erstellen Sie ein kostenloses Konto auf
+                    <a href="https://derivative.ca" target="_blank">derivative.ca</a>,
+                    um die Software freizuschalten.
+                </li>
+            </ul>
+            <p>
+                TouchDesigner arbeitet mit einem <strong>node-basierten Netzwerk</strong>:
+                Operatoren (OPs) werden miteinander verbunden und verarbeiten Daten in Echtzeit.
+                Doppelklick in das Netzwerk öffnet den Operator-Dialog, <code>Tab</code> öffnet die Suchmaske.
+            </p>
+        </section>
+
+        <!-- AUFGABE 1 -->
+        <section>
+            <h2><span>Aufgabe 1:</span> Interaktiver Partikelregen mit Optical Flow &amp; ParticlesGpu</h2>
+
+            <p>
+                In diesem Tutorial erstellen Sie einen GPU-beschleunigten Partikelregen,
+                der auf Bewegungen vor einer Webcam reagiert.
+                Die Kamerabewegungen werden mit dem Operator <strong>Optical Flow</strong> extrahiert
+                und steuern in Echtzeit einen <strong>ParticlesGpu</strong>-Effekt.
+            </p>
+
+            <p>Öffnen Sie das Video-Tutorial und bauen Sie die Schritte in TouchDesigner nach:</p>
+
+            <div class="video-wrapper">
+                <iframe
+                    src="https://hs-rm.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f4534d66-04f6-4a6e-afd2-b475007ae661&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all"
+                    allowfullscreen
+                    allow="autoplay">
+                </iframe>
+            </div>
+
+            <h3>Individualisierung</h3>
+            <p>
+                Nachdem Sie das Tutorial nachgebaut haben, passen Sie Ihr Projekt mit folgenden
+                Anpassungen an Ihren eigenen Geschmack an:
+            </p>
+
+            <h4>Custom Texture</h4>
+            <p>
+                Nutzen Sie statt den Preset-Texturen eine eigene Bild- oder Videodatei für Ihren Partikelregen. Vielleicht haben Sie auch im Workshop mit Herrn Posavec bereits eigene 3D-Modelle oder Texturen genutzt, die Sie hier wieder einsetzen möchten. Stellen Sie dazu unter <strong>Material → Texture</strong> die Option <strong>Custom</strong> ein und hinterlegen Sie Ihre Datei.
+            </p>
+
+            <h4>Parameter anpassen</h4>
+            <p>Passen Sie mindestens drei der folgenden Parameter nach Ihrem individuellen Geschmack im Parameter-Fenster unter ParticlesGPU bzw. Forces an :</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Wirkung</th>
+                        <th>Bedeutung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>Birth</code></td>
+                        <td>Anzahl neuer Partikel pro Frame</td>
+                        <td>„Mehr oder weniger Regen"</td>
+                    </tr>
+                    <tr>
+                        <td><code>Life Min</code></td>
+                        <td>Lebensdauer der Partikel</td>
+                        <td>„Partikel verschwinden schneller/langsamer"</td>
+                    </tr>
+                    <tr>
+                        <td><code>Particle Size Min &amp; Max</code></td>
+                        <td>Größe der Partikel</td>
+                        <td>„Kleine vs. große Tropfen"</td>
+                    </tr>
+                    <tr>
+                        <td><code>Speed</code></td>
+                        <td>Gesamte Simulationsgeschwindigkeit</td>
+                        <td>„Zeitlupe ↔ Turbo"</td>
+                    </tr>
+                    <tr>
+                        <td><code>Optical Flow Magnitude</code></td>
+                        <td>Reaktion auf Bewegung</td>
+                        <td>„Wie stark wirkt die Hand- und Kopfbewegung"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Speichern Sie Ihr Ergebnis als <code>partikelregen.toe</code>.
+                Legen Sie die verwendete Bild-/Videodatei in denselben Ordner,
+                damit TouchDesigner sie über den relativen Pfad finden kann. Bitte überprüfen Sie 
+            </p>
+        </section>
+
+        <!-- AUFGABE 2 -->
+        <section>
+            <h2><span>Aufgabe 2:</span> Interaktiver Image-Switcher</h2>
+
+            <p>
+                In diesem Tutorial bauen Sie ein kleines interaktives Bilddisplay in TouchDesigner nach –
+                eine Minianwendung, die Sie über den Bildschirm per Klick steuern können.
+                Zwei Bilder wechseln dabei mit einem <strong>Fade-Animationsübergang</strong>,
+                ausgelöst durch einen Mausklick.
+            </p>
+
+            <p>Öffnen Sie das Video-Tutorial und bauen Sie die Schritte in TouchDesigner nach.</p><p> Hinweis: Ab ca. Minute 28:30 geht das Tutorial auf die Frage ein, wie Sie die TouchDesigner-Anwendung auf das iPad bekommen. Dieser Teil ist nicht relevant für den Workshop (aber trotzdem interessant).</p>
+
+            <div class="video-wrapper">
+                <iframe
+                    src="https://hs-rm.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=711d510d-201a-4f25-a216-b475008c1a3b&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all"
+                    allowfullscreen
+                    allow="autoplay">
+                </iframe>
+            </div>
+
+            <h3>Individualisierung</h3>
+            <p>
+                Tauschen Sie die beiden Beispielbilder gegen eigene Fotos aus dem <strong>Fotoworkshop</strong> aus. Fügen Sie darüber hinaus ein drittes Bild hinzu, so dass die Anwendung durch drei Bilder bei Touch cycelt. Dafür können Sie beispielsweise den Switch-Operator statt des Cross-Operators verwenden.
+            </p>
+
+            <h4>Fotos Austauschen durch Vorbereitung in Photoshop</h4>
+            <p>Passen Sie Ihre Fotos vorab in Photoshop an:</p>
+            <ul>
+                <li>Bildgröße: <strong>1024 × 1024 px</strong></li>
+                <li>Auflösung: <strong>72 dpi</strong></li>
+                <li>Format: <strong>.jpg</strong></li>
+            </ul>
+
+            <h4>Bilder in TouchDesigner importieren</h4>
+            <p>
+                Fügen Sie für jedes Bild einen <strong>TOP Movie File In</strong>-Operator ein.
+                Im Parameterfenster bei <strong>File</strong> auf <strong>+</strong> klicken
+                und das vorbereitete Bild auswählen.
+            </p>
+
+            <p>
+                Speichern Sie die fertige Datei als <code>image-switcher.toe</code>
+                und legen Sie beide Bilddateien in denselben Ordner.
+            </p>
+        </section>
+
+        <!-- ABGABE -->
+        <section>
+            <h2>Infos zur Abgabe</h2>
+            <p>
+                Legen Sie beide <code>.toe</code>-Dateien sowie alle verwendeten Bild-/Videodateien
+                in einen Ordner. Achten Sie darauf, dass TouchDesigner auf die Assets über
+                <strong>relative Pfade aus dem Ordner heraus</strong> zugreifen kann.
+            </p>
+            <p>
+                Laden Sie den Ordner als ZIP-Datei auf Stud.IP hoch:
+            </p>
+            <ul>
+                <li>Dateiname: <code>vorname_nachname_workshop6.zip</code></li>
+                <li>Ablageort auf Stud.IP: <code>Dateien/Abgaben/Workshop 6</code></li>
+            </ul>
+
+            <p>Bitte prüfen Sie vor dem Upload:</p>
+            <ul>
+                <li>Öffnen sich beide <code>.toe</code>-Dateien fehlerfrei?</li>
+                <li>Sind alle Assets (Bilder, Videos) im Ordner vorhanden und werden korrekt geladen?</li>
+                <li>Ist die ZIP-Datei korrekt benannt (<code>vorname_nachname_workshop6.zip</code>)?</li>
+            </ul>
+        </section>
+
+        <!-- ERWARTETE ERGEBNISSE -->
+        <section>
+            <h2>Erwartete Ergebnisse</h2>
+
+            <p><strong>Minimum:</strong>
+                Beide Tutorials sind nachgebaut und als <code>.toe</code>-Dateien abgegeben.
+            </p>
+
+            <p><strong>Gut:</strong>
+                Eigene Assets (Custom Texture, eigene Bilder) sind eingebunden
+                und die Parameter wurden individuell angepasst.
+            </p>
+
+            <p><strong>Sehr gut:</strong>
+                Die Individualisierung geht über einfaches Asset-Austauschen hinaus –
+                die Szene hat einen eigenen visuellen Charakter und die Parameteranpassungen
+                wirken bewusst gestalterisch eingesetzt.
+            </p>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

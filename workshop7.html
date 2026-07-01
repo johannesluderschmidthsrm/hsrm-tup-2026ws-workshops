@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 7 - TouchDesigner 2</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="./_assets/workshop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        body {
+            background-image: url('_assets/images/tile_line_topographic.webp');
+            background-size: 40em 40em;
+            background-attachment: fixed;
+        }
+
+        figure {
+            margin: 1.5rem 0;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        figcaption {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.4rem;
+        }
+    </style>
+    <script src="_assets/script.js"></script>
+    <script>addNavi();</script>
+</head>
+
+<body>
+
+    <main>
+
+        <!-- HEADER -->
+        <header>
+            <h1>Technologie und Produktion
+                <span>Workshop 7: TouchDesigner – Videoprojektion mit KantanMapper</span>
+            </h1>
+            <p class="uk-text-center">
+                <br>Abgabe: <strong>Mittwoch, 15. Juli 2026</strong> – Gruppenabgabe als ZIP-Datei
+                <code>gruppe_X_workshop7.zip</code> auf Stud.IP (einmal pro Gruppe).
+            </p>
+        </header>
+
+        <!-- EINLEITUNG -->
+        <section>
+            <p>
+                Im zweiten TouchDesigner-Workshop bauen Sie auf den Kenntnissen aus Workshop 6 auf.
+                Diesmal erstellen Sie eine <strong>Videoprojektion</strong>:
+                Sie erzeugen visuelle Inhalte mit den Operatoren <strong>Ramp</strong> und <strong>Noise</strong>
+                oder binden eigene Fotos ein, und projizieren diese mit <strong>KantanMapper</strong>
+                auf physische Flächen.
+            </p>
+            <figure>
+                <img src="_assets/images/7_bild1.jpg" alt="Physische Videoprojektion auf Würfeln mit KantanMapper">
+                <figcaption>Ergebnis aus einer früheren Veranstaltung: Generative Visuals per KantanMapper auf physische Flächen projiziert.</figcaption>
+            </figure>
+        </section>
+
+        <!-- SCHRITT 1 -->
+        <section>
+            <h2><span>Schritt 1:</span> KantanMapper auf die Arbeitsfläche ziehen</h2>
+
+            <p>
+                Öffnen Sie TouchDesigner. Wählen Sie in der linken Operator-Palette
+                <strong>Mapping</strong> → <strong>KantanMapper</strong>
+                und ziehen Sie den Operator auf die Arbeitsfläche.
+            </p>
+            <p>
+                KantanMapper erscheint als Container auf der Arbeitsfläche.
+                Auf derselben Fläche erstellen Sie anschließend Ihre visuellen Inhalte.
+            </p>
+        </section>
+
+        <!-- SCHRITT 2 -->
+        <section>
+            <h2><span>Schritt 2:</span> Visuals erstellen</h2>
+
+            <p>
+                Erstellen Sie auf der Arbeitsfläche die Inhalte, die später projiziert werden sollen.
+                Sie haben zwei Möglichkeiten:
+            </p>
+
+            <h3>Option A: Generative Visuals mit Ramp und Noise</h3>
+
+            <p>
+                Fügen Sie einen <strong>Ramp</strong>-Operator hinzu:
+                Doppelklick auf die Arbeitsfläche → <strong>TOP</strong> → <code>ramp</code>.
+            </p>
+            <ul>
+                <li>Im Parameterfenster: Reiter <strong>Ramp</strong> → Farben nach Ihrem Geschmack wählen.</li>
+                <li>Unter <strong>Type</strong> verschiedene Ramp-Typen ausprobieren.</li>
+                <li>
+                    Für Bewegung: Reiter <strong>Ramp</strong> → Feld <strong>Phase</strong>:
+                    <pre><code>absTime.seconds</code></pre>
+                    eingeben. Der Ramp bewegt sich dann in Echtzeit.
+                </li>
+            </ul>
+
+            <p>
+                Probieren Sie zusätzlich den <strong>Noise</strong>-Operator aus:
+                Doppelklick → TOP → <code>noise</code>.
+            </p>
+            <ul>
+                <li>
+                    Parameterfenster → Reiter <strong>Noise</strong>:
+                    Option <strong>Monochrome</strong> deaktivieren, um farbiges Rauschen zu erhalten.
+                </li>
+                <li>
+                    Für Bewegung: Reiter <strong>Transform</strong> → <strong>Translate</strong> →
+                    dritte Spalte:
+                    <pre><code>absTime.seconds * 0.1</code></pre>
+                    Für schnellere Bewegung nutzen Sie statt der <code>0.1</code> einen höheren Wert.
+                </li>
+            </ul>
+
+            <h3>Option B: Eigenes Foto projizieren</h3>
+            <p>
+                Doppelklick auf die Arbeitsfläche → <strong>TOP</strong> → <code>moviefilein</code>.
+                Im Parameterfenster: Reiter <strong>Play</strong> → Feld <strong>File</strong> →
+                Ihr Foto auf dem Rechner suchen und auswählen.
+            </p>
+        </section>
+
+        <!-- SCHRITT 3 -->
+        <section>
+            <h2><span>Schritt 3:</span> KantanMapper-Fenster öffnen</h2>
+
+            <p>
+                Die erstellten Operatoren müssen lediglich auf <strong>derselben Arbeitsfläche</strong>
+                wie der KantanMapper-Container liegen – eine direkte Verbindung ist nicht nötig.
+                Die Zuweisung zu den Projektionsflächen erfolgt später im KantanMapper-Fenster (Schritt 5).
+            </p>
+            <figure>
+                <img src="_assets/images/7_bild2.png" alt="TouchDesigner-Netzwerk mit Ramp-Operatoren und KantanMapper auf derselben Arbeitsfläche">
+                <figcaption>TouchDesigner-Netzwerk: Ramp-Operatoren und KantanMapper-Container liegen auf derselben Arbeitsfläche.</figcaption>
+            </figure>
+            <p>
+                Öffnen Sie das KantanMapper-Fenster über den Button
+                <strong>Open Kantan Window</strong> im Parameterfenster des Containers.
+            </p>
+            <figure>
+                <img src="_assets/images/7_bild3.png" alt="KantanMapper Parameterfenster mit Open Kantan Window Button">
+                <figcaption>Parameterfenster des KantanMapper-Containers: Über „Open Kantan Window" öffnet sich das Mapping-Fenster.</figcaption>
+            </figure>
+        </section>
+
+        <!-- SCHRITT 4 -->
+        <section>
+            <h2><span>Schritt 4:</span> Mapping auf Flächen durchführen</h2>
+
+            <p>
+                Schließen Sie den Projektor an und wählen Sie ihn in KantanMapper unter
+                <strong>Output</strong> aus.
+            </p>
+            <p>
+                Definieren Sie Projektionsflächen (<em>Chiclets</em>):
+            </p>
+            <ol>
+                <li>Ziehen Sie mit der Maus ein Rechteck auf die gewünschte Projektionsfläche im KantanMapper-Fenster.</li>
+                <li>
+                    Ziehen Sie die Ecken des Rechtecks mit den <strong>Pfeiltasten</strong>,
+                    um die Fläche exakt an die physische Projektionsfläche anzupassen.
+                </li>
+                <li>Wiederholen Sie diesen Schritt für jede weitere Fläche, die bespielt werden soll.</li>
+            </ol>
+            <figure>
+                <img src="_assets/images/7_bild4.png" alt="KantanMapper-Fenster mit definierten Projektionsflächen">
+                <figcaption>KantanMapper-Fenster: Mehrere Rechtecke (Chiclets) sind auf den Projektionsflächen definiert und können individuell ausgerichtet werden.</figcaption>
+            </figure>
+        </section>
+
+        <!-- SCHRITT 5 -->
+        <section>
+            <h2><span>Schritt 5:</span> Operator auf Fläche ziehen</h2>
+
+            <p>
+                Ziehen Sie Ihre erstellten Operatoren (<code>ramp</code>, <code>noise</code>
+                oder <code>moviefilein</code>) auf die jeweiligen Flächen in KantanMapper.
+                Der Operator wird nun auf der definierten Fläche angezeigt und projiziert.
+            </p>
+            <figure>
+                <img src="_assets/images/7_bild5.png" alt="KantanMapper-Ausgabe mit Visual auf Würfelfläche projiziert">
+                <figcaption>KantanMapper-Ausgabe: Ein Ramp-Visual wird auf eine Fläche gemappt und projiziert.</figcaption>
+            </figure>
+            <p>
+                Speichern Sie Ihr Mapping abschließend über
+                <strong>File → Save</strong> in KantanMapper,
+                um es später wiederverwenden zu können.
+            </p>
+        </section>
+
+        <!-- ABGABE -->
+        <section>
+            <h2>Infos zur Abgabe</h2>
+            <p>
+                Workshop 7 ist eine <strong>Gruppenabgabe</strong> – jede Gruppe lädt einmal hoch.
+                Sie wissen, in welcher Gruppe Sie sind.
+            </p>
+            <p>
+                Legen Sie die <code>.toe</code>-Datei sowie alle verwendeten Bilder oder Videos
+                in einen Ordner. Achten Sie darauf, dass TouchDesigner auf alle Assets über
+                <strong>relative Pfade aus dem Ordner heraus</strong> zugreifen kann.
+            </p>
+            <p>Laden Sie den Ordner als ZIP-Datei auf Stud.IP hoch:</p>
+            <ul>
+                <li>Dateiname: <code>gruppe_X_workshop7.zip</code> (X = Ihre Gruppennummer)</li>
+                <li>Ablageort auf Stud.IP: <code>Dateien/Abgaben/Workshop 7</code></li>
+            </ul>
+
+            <p>Bitte prüfen Sie vor dem Upload:</p>
+            <ul>
+                <li>Öffnet sich die <code>.toe</code>-Datei fehlerfrei in TouchDesigner?</li>
+                <li>Sind alle verwendeten Bilder oder Videos im Ordner vorhanden und werden korrekt geladen?</li>
+                <li>Ist das KantanMapper-Mapping gespeichert (<code>File → Save</code>)?</li>
+                <li>Ist die ZIP-Datei korrekt benannt (<code>gruppe_X_workshop7.zip</code>)?</li>
+            </ul>
+        </section>
+
+        <!-- ERWARTETE ERGEBNISSE -->
+        <section>
+            <h2>Erwartete Ergebnisse</h2>
+
+            <p><strong>Minimum:</strong>
+                KantanMapper ist eingerichtet, mindestens eine Fläche ist definiert
+                und ein Operator (Ramp, Noise oder Foto) wird darauf projiziert.
+            </p>
+
+            <p><strong>Gut:</strong>
+                Mehrere Flächen sind definiert, verschiedene Operatoren werden eingesetzt
+                und die Flächen sind sorgfältig an die physische Projektionsfläche angepasst.
+            </p>
+
+            <p><strong>Sehr gut:</strong>
+                Die Projektion wirkt gestalterisch durchdacht – Farben, Bewegung und Flächen
+                sind aufeinander abgestimmt und ergeben ein stimmiges Gesamtbild.
+            </p>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
