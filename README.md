@@ -1,4 +1,4 @@
-# hsrm-tup-2025ws-workshops
+# hsrm-tup-2026ws-workshops
 
 Übungsverzeichnis für den MM-Kurs **Technologie und Produktion (IM/UI)**.
 
