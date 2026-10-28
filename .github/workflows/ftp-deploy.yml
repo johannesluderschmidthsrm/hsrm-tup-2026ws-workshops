@@ -14,6 +14,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
         server: ${{ secrets.FTP_SERVER }}
+        protocol: ftps
         server-dir: workshop/
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PWD }}
