@@ -18,6 +18,7 @@ jobs:
         server-dir: workshop/
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PWD }}
+        log-level: verbose
         exclude: |
           setup-hooks.sh
           README.md
