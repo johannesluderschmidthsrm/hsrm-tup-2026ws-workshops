@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop 2 - Produktion Interaktiver Medien</title>
+    <title>Workshop 2 - Technologie und Produktion (IM/UI)</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/css/uikit.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit.min.js"></script>
@@ -24,8 +24,8 @@
 <body>
     <main>
         <header>
-            <h1>Produktion Interaktiver Medien<span>Workshop 2: Responsive Interfaces</span></h1>
-            <p class="uk-text-center">Abgabe: <strong>Dienstag, 19. Mai 2026, 23:59 Uhr</strong>. Gesamter Ordner als Zip-Datei
+            <h1>Technologie und Produktion (IM/UI)<span>Workshop 2: Responsive Interfaces</span></h1>
+            <p class="uk-text-center">Abgabe: <strong>Dienstag, 24. November 2026, 23:59 Uhr</strong>. Gesamter Ordner als Zip-Datei
                 <code>vorname-nachname.zip</code> auf Stud.IP unter
                 <code>Dateien/Abgaben/ Abgaben – Workshops Technologie und Produktion/Abgabe 2</code>.
             </p>
@@ -37,10 +37,9 @@
             <h2>Vorbereitung</h2>
             <ul>
                 <li>Öffnen Sie Ihren Ordner <code>tup-workshop/vorname-nachname</code> in Visual Studio Code.</li>
-                <li>Benennen Sie Ihre bisherige <code>index.html</code> aus Workshop 1 in <code>workshop1.html</code> um.</li>
                 <li>Erstellen Sie anschließend eine neue Datei <code>workshop2.html</code>. Sie können dafür Inhalte und Strukturen aus Workshop 1 übernehmen und weiterentwickeln.</li>
                 <li>Legen Sie zusätzlich eine Datei <code>workshop2.js</code> in Ihrem <code>assets</code>-Ordner an. Diese Datei nutzen wir später für eine erste JavaScript-Interaktion.</li>
-                <li>Achten Sie weiterhin auf kleine Dateinamen ohne Leerzeichen, Umlaute und Sonderzeichen.</li>
+                <li>Achten Sie bei allen Datei- und Ordnernamen auf Kleinschreibung und verzichten Sie auf Leerzeichen, Umlaute und Sonderzeichen.</li>
             </ul>
         </section>
 
@@ -59,8 +58,8 @@
             <h2>Aufgabe 2: Responsive Layout mit UIkit-Grids</h2>
             <p>Bauen Sie rund um Ihre Inhalte ein responsives Layout mit <a href="https://getuikit.com/docs/grid" target="_blank">UIkit-Grids</a>. Arbeiten Sie dabei bewusst <strong>mobile first</strong>: Auf kleinen Bildschirmen sollen Inhalte gut untereinander lesbar sein; auf größeren Bildschirmen dürfen sie nebeneinander stehen.</p>
             <ul>
-                <li>Verwenden Sie die <code>.uk-container</code>-Klasse zum Begrenzen der Hauptspalte.</li>
-                <li>Verwenden Sie <code>.uk-grid</code> und passende Breitenklassen, um Inhalte in Spalten zu gliedern.</li>
+                <li>Verwenden Sie die Klasse <code>uk-container</code> zum Begrenzen der Hauptspalte.</li>
+                <li>Verwenden Sie <code>uk-grid</code> und passende Breitenklassen, um Inhalte in Spalten zu gliedern.</li>
                 <li>Nutzen Sie Breakpoints wie <code>@s</code>, <code>@m</code> und <code>@l</code>, z. B. <code>uk-child-width-1-2@s</code>, <code>uk-child-width-1-3@m</code> oder <code>uk-child-width-1-4@l</code>. Nutzen Sie min. zwei Breakpoints.</li>
                 <li>Testen Sie Ihr Layout im Browser mit unterschiedlichen Fensterbreiten und mit den Developer Tools.</li>
             </ul>
@@ -105,7 +104,7 @@
 
         <section>
             <h2>Arbeitsweise im Workshop: Manuell vs. KI</h2>
-            <p>Arbeiten Sie wie in Workshop 1 bewusst in zwei Phasen. So können Sie vergleichen, was Sie selbst lösen können und wo KI sinnvoll unterstützt.</p>
+            <p>Arbeiten Sie wie in Workshop 1 bewusst in zwei Phasen. So können Sie vergleichen, was Sie selbst lösen können und wo KI sinnvoll unterstützt. Anders als in Workshop 1 lassen Sie die KI-Version diesmal nicht komplett neu erstellen, sondern überarbeiten Ihre manuell erstellte Version gezielt mit KI.</p>
             <p>Erstellen Sie im Rahmen dieses Workshops zwei Versionen Ihrer Seite:</p>
             <ul>
                 <li>eine Version, die Sie möglichst eigenständig und ohne KI-Unterstützung entwickeln</li>
@@ -138,7 +137,7 @@
             </ul>
 
             <h3>Dokumentation (AI Production Log)</h3>
-            <p>Dokumentieren Sie zusätzlich in Ihrer KI-Version kurz Ihre Arbeit mit KI (ca. 5–10 Zeilen in einer Textdatei oder als HTML-Kommentar am Ende Ihrer Datei):</p>
+            <p>Dokumentieren Sie wie in Workshop 1 kurz Ihre Arbeit mit KI (ca. 5–10 Zeilen) in einer separaten Textdatei, z. B. <code>ai-log-workshop2.txt</code>:</p>
             <ul>
                 <li>Welche Prompts haben Sie verwendet?</li>
                 <li>Was hat KI beim Responsive Layout gut erklärt oder verbessert?</li>
@@ -152,10 +151,15 @@
             <ul>
                 <li>Testen Sie Ihre Seite mit unterschiedlichen Browserbreiten und mit den Developer Tools.</li>
                 <li>Prüfen Sie, ob alle Bilder korrekt geladen werden und die Dateigrößen angemessen sind.</li>
-                <li>Testen Sie Ihre HTML-Datei mit dem <a href="https://validator.w3.org/" target="_blank">W3C Web Validator</a>.</li>
+                <li>Sorgen Sie dafür, dass Ihre eigenen HTML- und ggf. CSS-Dateien valide sind. Testen Sie diese mit dem <a href="https://validator.w3.org/" target="_blank">W3C Web Validator</a>.</li>
                 <li>Prüfen Sie, ob Ihre JavaScript-Konsole Fehlermeldungen zeigt.</li>
-                <li>Geben Sie erneut Ihren gesamten Ordner <code>vorname-nachname</code> als ZIP-Datei ab. Der Ordner sollte nun sowohl <code>workshop1.html</code> als auch <code>workshop2.html</code> enthalten.</li>
-                <li>Ihr Ordner sollte außerdem sowohl <code>workshop2.html</code> als auch <code>workshop2_ki.html</code> enthalten.</li>
+                <li>Geben Sie erneut Ihren gesamten Ordner <code>vorname-nachname</code> als ZIP-Datei ab. Der Ordner sollte nun enthalten:
+                    <ul>
+                        <li>aus Workshop 1: <code>workshop1.html</code>, <code>workshop1_ki.html</code> und Ihr AI Production Log</li>
+                        <li>aus Workshop 2: <code>workshop2.html</code>, <code>workshop2_ki.html</code> und Ihr AI Production Log (z. B. <code>ai-log-workshop2.txt</code>)</li>
+                        <li>den <code>assets</code>-Ordner inkl. <code>images</code> und <code>workshop2.js</code></li>
+                    </ul>
+                </li>
             </ul>
         </section>
 

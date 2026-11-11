@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop 3 - Produktion Interaktiver Medien</title>
+    <title>Workshop 3 - Technologie und Produktion (IM/UI)</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/css/uikit.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.1/dist/js/uikit.min.js"></script>
@@ -33,9 +33,9 @@
 
     <main>
         <header>
-            <h1>Produktion Interaktiver Medien<span>Workshop 3: JavaScript</span></h1>
+            <h1>Technologie und Produktion (IM/UI)<span>Workshop 3: JavaScript</span></h1>
             <p class="uk-text-center">
-                <br>Abgabe: <strong>Dienstag, 2. Juni 2026</strong> Gesamter Ordner als Zip-Datei
+                <br>Abgabe: <strong>Dienstag, 8. Dezember 2026, 23:59 Uhr</strong>. Gesamter Ordner als Zip-Datei
                 <code>vorname-nachname.zip</code> auf Stud.IP unter
                 <code>Dateien/Abgaben/ Abgaben – Workshops Technologie und Produktion/Abgabe 3</code>.
             </p>
@@ -165,7 +165,7 @@ document.querySelectorAll('article').forEach(function (el) {
 
 <section>
             <h2><span>Aufgabe 2a:</span> Artikel aus- und einblenden</h2>
-            <p><span>Erstellen Sie eine neue Kopie von </span><code class="c1">jsTest.html</code>&nbsp;und benennen diese in <code class="c1">workshop3.html</code>um. Verschieben Sie diese Datei in Ihr <code>vorname-nachname</code>-Verzeichnis. Sorgen Sie dafür, dass die CSS-Datei aus <code>js-workshop/css</code> richtig eingebunden wird. Fügen Sie in <code class="c1">workshop3.html</code> einen
+            <p><span>Erstellen Sie eine neue Kopie von </span><code class="c1">jsTest.html</code>&nbsp;und benennen diese in <code class="c1">workshop3.html</code> um. Verschieben Sie diese Datei in Ihr <code>vorname-nachname</code>-Verzeichnis. Sorgen Sie dafür, dass die CSS-Datei aus <code>js-workshop/css</code> richtig eingebunden wird. Fügen Sie in <code class="c1">workshop3.html</code> einen
                     Navigationspunkt “Fließtext ein-/ausblenden” hinzu. Bauen Sie die Code-Beispiele
                     aus Aufgabe 1
                     so zusammen, dass beim Klick auf “Fließtext ein-/ausblenden” alle Absätze
@@ -440,6 +440,43 @@ section.innerHTML = '&lt;button class="btn-close"&gt;Bild Schließen&lt;/button&
         </section>
 
         <section>
+            <h2>Arbeitsweise im Workshop: Manuell vs. KI</h2>
+            <p>Arbeiten Sie wie in Workshop 2 bewusst in zwei Phasen: Zuerst lösen Sie die Aufgaben selbst, anschließend überarbeiten Sie Ihre eigene Version gezielt mit KI. Die KI-Version wird also nicht komplett neu erstellt, sondern baut auf Ihrer manuellen Lösung auf.</p>
+
+            <h3>Phase A: Manuelles Arbeiten</h3>
+            <ul>
+                <li>Lösen Sie die Aufgaben 2–4 zunächst selbst und <strong>ohne KI</strong>.</li>
+                <li>Nutzen Sie dafür die Vorlesungsfolien, die Beispiele aus <code>js-workshop</code> und die Referenz auf <a href="https://developer.mozilla.org/de/docs/Web/JavaScript" target="_blank">developer.mozilla.org</a>.</li>
+                <li>Testen Sie Ihre Lösung im Browser und prüfen Sie die Konsole auf Fehler.</li>
+                <li>Speichern Sie diese Version als <code>workshop3.html</code>.</li>
+            </ul>
+
+            <h3>Phase B: Arbeiten mit KI</h3>
+            <ul>
+                <li>Erstellen Sie eine Kopie Ihrer manuellen Lösung mit dem Namen <code>workshop3_ki.html</code> und überarbeiten Sie diese mit der Hochschul-KI unter <a href="https://ki.hs-rm.de/" target="_blank">ki.hs-rm.de</a>.</li>
+                <li>Lassen Sie sich z. B. Ihren JavaScript-Code erklären, Fehler finden oder Vereinfachungen bzw. Verbesserungen vorschlagen.</li>
+                <li>Übernehmen Sie Vorschläge nur dann, wenn Sie verstanden haben, was der Code macht.</li>
+            </ul>
+
+            <p><strong>Mögliche Prompts:</strong></p>
+            <ul>
+                <li><code style="white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">Erkläre mir diesen JavaScript-Code Schritt für Schritt. Welche Elemente werden selektiert und was passiert bei welchem Event?</code></li>
+                <li><code style="white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">Mein Klapper funktioniert nicht wie erwartet. Hier ist mein HTML- und JavaScript-Code. Wo liegt der Fehler?</code></li>
+                <li><code style="white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">Wie kann ich meine Lightbox so erweitern, dass sie sich auch mit der Escape-Taste schließen lässt? Erkläre die Änderung kurz.</code></li>
+                <li><code style="white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">Vereinfache diesen JavaScript-Code für Anfänger:innen, ohne die Funktion zu verändern.</code></li>
+            </ul>
+
+            <h3>Dokumentation (AI Production Log)</h3>
+            <p>Dokumentieren Sie wie in den vorherigen Workshops kurz Ihre Arbeit mit KI (ca. 5–10 Zeilen) in einer separaten Textdatei, z. B. <code>ai-log-workshop3.txt</code>:</p>
+            <ul>
+                <li>Welche Prompts haben Sie verwendet?</li>
+                <li>Was hat KI beim JavaScript-Code gut erklärt oder verbessert?</li>
+                <li>Was war problematisch, zu kompliziert oder falsch?</li>
+                <li>Was mussten Sie selbst anpassen oder korrigieren?</li>
+            </ul>
+        </section>
+
+        <section>
             <h2>Infos zur Abgabe</h2>
             <p>Bitte prüfen Sie folgende Punkte:</p>
 
@@ -455,6 +492,7 @@ section.innerHTML = '&lt;button class="btn-close"&gt;Bild Schließen&lt;/button&
                 <li>Wirft der W3C-Validator-Fehler? Den
                         Validator finden Sie unter <a href="https://validator.w3.org/nu/">https://validator.w3.org/</a> oder als <a href="https://marketplace.visualstudio.com/items?itemName=CelianRiboulet.webvalidator" target="_blank">Plugin in VSCode</a>.
                 </li>
+                <li>Geben Sie erneut Ihren gesamten Ordner <code>vorname-nachname</code> als ZIP-Datei ab. Der Ordner sollte zusätzlich zu den Dateien aus Workshop 1 und 2 nun <code>workshop3.html</code>, <code>workshop3_ki.html</code>, Ihr AI Production Log (z. B. <code>ai-log-workshop3.txt</code>) sowie den Ordner <code>js-workshop</code> enthalten.</li>
             </ul>
 
         </section>
